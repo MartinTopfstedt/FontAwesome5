@@ -187,12 +187,13 @@ namespace FontAwesome5.WPF
 
             imageAwesome.SetValue(SourceProperty, CreateImageSource(imageAwesome.Icon, imageAwesome.Foreground));
         }
-        
+
         /// <summary>
         /// Creates a new System.Windows.Media.ImageSource of a specified FontAwesomeIcon and foreground System.Windows.Media.Brush.
         /// </summary>
         /// <param name="icon">The FontAwesome icon to be drawn.</param>
         /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
+        /// <param name="emSize">The font size in em.</param>
         /// <returns>A new System.Windows.Media.ImageSource</returns>
         public static ImageSource CreateImageSource(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
         {
