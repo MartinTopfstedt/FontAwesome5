@@ -1,0 +1,98 @@
+﻿<Window x:Class="FontAwesome5.WPF.Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontAwesome5.WPF.Example"
+        xmlns:fa5="http://schemas.fontawesome.com/icons/"
+        mc:Ignorable="d"
+        Title="FontAwesome5.WPF.Example" Height="632" Width="883">
+    <Window.Resources>
+        <fa5:LabelConverter x:Key="LabelConverter"/>
+        <fa5:StyleConverter x:Key="StyleConverter"/>
+        <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Font Size:" VerticalAlignment="Center"/>
+                <Slider Minimum="0" Maximum="60" Value="{Binding FontSize, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+                <TextBlock Text="{Binding FontSize, StringFormat={}{0:#.##}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
+                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Spin:" VerticalAlignment="Center"/>
+                <CheckBox IsChecked="{Binding SpinIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <Slider Minimum="0" Maximum="10" Value="{Binding SpinDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
+                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Rotation:" VerticalAlignment="Center"/>
+                <Slider Minimum="0" Maximum="360" Value="{Binding Rotation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Flip:" VerticalAlignment="Center"/>
+                <ComboBox ItemsSource="{Binding FlipOrientations}" SelectedItem="{Binding FlipOrientation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+            
+        <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Icon">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
+                    <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Enum Member: "/>
+                <TextBlock Grid.Column="1" Text="{Binding SelectedIcon, StringFormat=EFontAwesomeIcon.{0}}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Label: "/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Label + Style: "/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}, ConverterParameter='{}{0} ({1})'}"/>
+            </Grid>
+
+            <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
+            <TextBlock Text="{Binding SVGText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
+            <TextBlock Text="{Binding ImageText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
+            <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}" Width="50" Height="50" Margin="10"/>
+            <TextBlock Text="Using a converter" HorizontalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

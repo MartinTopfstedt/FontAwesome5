@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+		<metadata>
+			<id>FontAwesome5.WPF</id>
+			<version>$version$</version>      
+			<authors>Codinion</authors>
+			<owners>Martin Topfstedt</owners>
+			<licenseUrl>https://github.com/MartinTopfstedt/FontAwesome5/blob/master/LICENSE</licenseUrl>
+			<projectUrl>https://github.com/MartinTopfstedt/FontAwesome5</projectUrl>
+			<iconUrl>https://raw.githubusercontent.com/MartinTopfstedt/FontAwesome5/master/icon.png</iconUrl>
+			<requireLicenseAcceptance>false</requireLicenseAcceptance>
+			<description>WPF controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+				For examples https://github.com/MartinTopfstedt/FontAwesome5</description>
+			<releaseNotes>Font-Awesome 5.0.6</releaseNotes>
+			<tags>fontawesome fontawesome5</tags>
+		<copyright>Copyright ©2018 Codinion</copyright>
+		</metadata>
+		<files>
+				<file src=".\bin\Release\FontAwesome5.WPF.dll" target="lib\net45\" />
+				<file src=".\bin\Release\FontAwesome5.WPF.xml" target="lib\net45\" />
+		</files>
+</package>
