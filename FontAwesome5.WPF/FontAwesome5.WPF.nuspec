@@ -16,7 +16,7 @@ For examples https://github.com/MartinTopfstedt/FontAwesome5</description>
 		<copyright>Copyright ©2018 Codinion</copyright>
 		</metadata>
 		<files>
-				<file src=".\bin\Release\FontAwesome5.WPF.dll" target="lib\net45\" />
-				<file src=".\bin\Release\FontAwesome5.WPF.xml" target="lib\net45\" />
+				<file src=".\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
+				<file src=".\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
 		</files>
 </package>
