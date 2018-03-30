@@ -11,7 +11,7 @@
 			<requireLicenseAcceptance>false</requireLicenseAcceptance>
 			<description>WPF controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 For examples https://github.com/MartinTopfstedt/FontAwesome5</description>
-			<releaseNotes>Font-Awesome 5.0.6</releaseNotes>
+			<releaseNotes>Font-Awesome 5.0.9</releaseNotes>
 			<tags>fontawesome fontawesome5</tags>
 		<copyright>Copyright ©2018 Codinion</copyright>
 		</metadata>
