@@ -119,6 +119,10 @@
       <Project>{064df8ab-301d-4a3d-883f-2243daa66605}</Project>
       <Name>FontAwesome5.WPF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{c5b304e1-fa5c-4a51-a2f2-816eb2d2a888}</Project>
+      <Name>FontAwesome5</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

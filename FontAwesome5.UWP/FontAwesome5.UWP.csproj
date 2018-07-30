@@ -106,7 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EFontAwesomeIcon.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="FontAwesome.cs" />
@@ -139,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FontAwesome5.UWP.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{c5b304e1-fa5c-4a51-a2f2-816eb2d2a888}</Project>
+      <Name>FontAwesome5</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 using System;
 using System.ComponentModel;
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
 	/// <summary>
 	/// FontAwesome v5.0.6 by Dave Gandy (@davegandy)

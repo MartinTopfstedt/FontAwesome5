@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4;net4.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net4.0'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../FontAwesome5.WPF/Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
+    <PackageReference Include="System.Reflection.TypeExtensions">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

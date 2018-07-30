@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using FontAwesome5.Extensions;
 using FontAwesome5.UWP.Extensions;
-using FontAwesome5.WPF.Extensions;
 
 namespace FontAwesome5.UWP
 {
