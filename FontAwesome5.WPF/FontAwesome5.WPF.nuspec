@@ -12,6 +12,9 @@ Font-Awesome Version: 5.0.9</description>
 			<iconUrl>https://raw.githubusercontent.com/MartinTopfstedt/FontAwesome5/master/icon.png</iconUrl>
 			<requireLicenseAcceptance>false</requireLicenseAcceptance>
 			<tags>fontawesome fontawesome5</tags>
+		  <dependencies>
+		    <dependency id="FontAwesome5" version="5.0.9" />
+		  </dependencies>
 		<copyright>Copyright ©2018 Codinion</copyright>
 		</metadata>
 		<files>

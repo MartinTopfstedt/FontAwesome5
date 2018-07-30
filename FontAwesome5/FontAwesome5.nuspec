@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>FontAwesome5.UWP</id>
+    <id>FontAwesome5</id>
     <version>$version$</version>
     <description>
-      UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+      Enum for Font-Awesome icons and extensions.
       For examples https://github.com/MartinTopfstedt/FontAwesome5
       Font-Awesome Version: 5.0.9
     </description>
@@ -15,13 +15,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>fontawesome fontawesome5</tags>
     <copyright>Copyright ©2018 Codinion</copyright>
-    <dependencies>
-      <dependency id="FontAwesome5" version="5.0.9" />
-    </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
-    <file src="bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
-    <file src="bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
+    <file src="bin\Release\net4.0\FontAwesome5.dll" target="lib\net4.0" />
+    <file src="bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4" />
   </files>
 </package>
