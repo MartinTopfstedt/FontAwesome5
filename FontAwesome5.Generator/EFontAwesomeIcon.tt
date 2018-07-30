@@ -32,7 +32,7 @@
 
 	WriteLine("using System;");
 	WriteLine("using System.ComponentModel;");
-	WriteLine("namespace FontAwesome5.WPF");
+	WriteLine("namespace FontAwesome5.UWP");
 	WriteLine("{");
 	PushIndent("\t");
 
@@ -131,7 +131,7 @@
 	PopIndent();
 	WriteLine("}");
 
-	var outputFile = Path.Combine(folderRepo, @"FontAwesome5.WPF\EFontAwesomeIcon.cs");	
+	var outputFile = Path.Combine(folderRepo, @"FontAwesome5.UWP\EFontAwesomeIcon.cs");	
 	File.WriteAllText(outputFile, this.GenerationEnvironment.ToString()); 
 	this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
 #>
