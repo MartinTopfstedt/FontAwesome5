@@ -15,7 +15,7 @@ namespace FontAwesome5.UWP.Extensions
         /// <summary>
         /// The key used for storing the spinner Storyboard.
         /// </summary>
-        private static readonly string SpinnerStoryBoardName = String.Format("{0}Spinner", typeof(FontAwesome.UWP.FontAwesome).Name);
+        private static readonly string SpinnerStoryBoardName = String.Format("{0}Spinner", typeof(FontAwesome).Name);
 
         /// <summary>
         /// Start the spinning animation

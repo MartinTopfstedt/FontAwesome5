@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using FontAwesome5.UWP;
 using FontAwesome5.UWP.Extensions;
-using FontAwesome5.WPF;
 using FontAwesome5.WPF.Extensions;
 
-namespace FontAwesome.UWP
+namespace FontAwesome5.UWP
 {
     /// <summary>
     /// Represents ann icon that uses the FontAwesome font
