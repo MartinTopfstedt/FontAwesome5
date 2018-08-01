@@ -10,14 +10,14 @@ namespace FontAwesome5.UWP
         /// <summary>
         /// FontAwesome5 Regular FontFamily
         /// </summary>
-        public static readonly FontFamily RegularFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/fa-regular-400.ttf#Font Awesome 5 Free");
+        public static readonly FontFamily RegularFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Regular-400.otf#Font Awesome 5 Free");
         /// <summary>
         /// FontAwesome5 Solid FontFamily
         /// </summary>
-        public static readonly FontFamily SolidFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid");
+        public static readonly FontFamily SolidFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free");
         /// <summary>
         /// FontAwesome5 Brands FontFamily
         /// </summary>
-        public static readonly FontFamily BrandsFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/fa-brands-400.ttf#Font Awesome 5 Brands");
+        public static readonly FontFamily BrandsFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Brands");
     }
 }

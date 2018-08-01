@@ -72,6 +72,10 @@
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon}"/>
             </Grid>
 
+            <TextBlock FontFamily="/Fonts/Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Brands" Text="&#xf170;   This is test."
+                       HorizontalAlignment="Center"></TextBlock>
+            
+
             <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" 
                              Spin="{Binding SpinIsEnabled}" 
                              SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}"  Margin="10"/>

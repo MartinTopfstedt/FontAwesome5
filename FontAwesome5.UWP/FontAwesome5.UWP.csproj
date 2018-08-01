@@ -35,6 +35,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -122,21 +123,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Font-Awesome\use-on-desktop\Font Awesome 5 Brands-Regular-400.otf">
+      <Link>Fonts\Font Awesome 5 Brands-Regular-400.otf</Link>
+    </Content>
+    <Content Include="..\Font-Awesome\use-on-desktop\Font Awesome 5 Free-Regular-400.otf">
+      <Link>Fonts\Font Awesome 5 Free-Regular-400.otf</Link>
+    </Content>
     <Content Include="..\Font-Awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Font-Awesome\web-fonts-with-css\webfonts\fa-brands-400.ttf">
-      <Link>Fonts\fa-brands-400.ttf</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Font-Awesome\web-fonts-with-css\webfonts\fa-regular-400.ttf">
-      <Link>Fonts\fa-regular-400.ttf</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="FontAwesome5.UWP.nuspec" />
   </ItemGroup>
   <ItemGroup>
