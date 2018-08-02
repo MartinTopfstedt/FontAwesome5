@@ -37,9 +37,9 @@
 	PushIndent("\t");
 
 	WriteLine("/// <summary>");
-	WriteLine("/// FontAwesome v5.0.6 by Dave Gandy (@davegandy)");
+	WriteLine("/// FontAwesome by Dave Gandy (@davegandy)");
 	WriteLine("///	The iconic SVG, font, and CSS toolkit");
-	WriteLine("///	License https://fontawesome.com/license (Font: v5.0.6, C#: MIT License)");
+	WriteLine("///	License https://fontawesome.com/license (C#: MIT License)");
 	WriteLine("/// </summary>");
 	WriteLine("public enum EFontAwesomeStyle");
 	WriteLine("{");
