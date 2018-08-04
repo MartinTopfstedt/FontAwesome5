@@ -3,6 +3,8 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using FontAwesome5.Extensions;
+
 namespace FontAwesome5.WPF
 {
     /// <summary>

@@ -6,7 +6,7 @@
     <description>
       UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
       For examples https://github.com/MartinTopfstedt/FontAwesome5
-      Font-Awesome Version: 5.0.9
+      Font-Awesome Version: 5.2.0
     </description>
     <authors>Codinion</authors>
     <licenseUrl>https://github.com/MartinTopfstedt/FontAwesome5/blob/master/LICENSE</licenseUrl>
@@ -15,10 +15,18 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>fontawesome fontawesome5</tags>
     <copyright>Copyright ©2018 Codinion</copyright>
+    <dependencies>
+      <dependency id="FontAwesome5" version="5.2.0" />
+    </dependencies>
   </metadata>
   <files>
+    <file src="bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
     <file src="bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
     <file src="bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
     <file src="bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
+
+    <file src="bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <file src="bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <file src="bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" />
   </files>
 </package>

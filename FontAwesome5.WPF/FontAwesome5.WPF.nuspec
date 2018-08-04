@@ -12,9 +12,13 @@ Font-Awesome Version: 5.2.0</description>
 			<iconUrl>https://raw.githubusercontent.com/MartinTopfstedt/FontAwesome5/master/icon.png</iconUrl>
 			<requireLicenseAcceptance>false</requireLicenseAcceptance>
 			<tags>fontawesome fontawesome5</tags>
+		  <dependencies>
+		    <dependency id="FontAwesome5" version="5.2.0" />
+		  </dependencies>
 		<copyright>Copyright ©2018 Codinion</copyright>
 		</metadata>
 		<files>
+        <file src=".\bin\Release\FontAwesome5.dll" target="lib\net40\" />
 				<file src=".\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
 				<file src=".\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
 		</files>

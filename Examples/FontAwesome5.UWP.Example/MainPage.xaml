@@ -72,11 +72,9 @@
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon}"/>
             </Grid>
 
-            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" 
-                             Spin="{Binding SpinIsEnabled}" 
-                             SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}"  Margin="10"/>
-            <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap" Width="500" 
-                       TextAlignment="Center"/>
+            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
+            <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+
         </StackPanel>
     </Grid>
 </Page>

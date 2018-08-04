@@ -105,18 +105,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Brands-Regular-400.otf">
-      <Link>Fonts\Font Awesome 5 Brands-Regular-400.otf</Link>
-    </Content>
-    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Free-Regular-400.otf">
-      <Link>Fonts\Font Awesome 5 Free-Regular-400.otf</Link>
-    </Content>
-    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
-      <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
-    </Content>
-    <Content Include="..\..\Font-Awesome\web-fonts-with-css\webfonts\fa-regular-400.ttf">
-      <Link>Assets\Fonts\fa-regular-400.ttf</Link>
-    </Content>
     <None Include="FontAwesome5.UWP.Example_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +136,10 @@
     <ProjectReference Include="..\..\FontAwesome5.UWP\FontAwesome5.UWP.csproj">
       <Project>{3da649d8-590a-4bbd-8181-f01bc81748b7}</Project>
       <Name>FontAwesome5.UWP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{c5b304e1-fa5c-4a51-a2f2-816eb2d2a888}</Project>
+      <Name>FontAwesome5</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

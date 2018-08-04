@@ -8,12 +8,12 @@
 //------------------------------------------------------------------------------
 using System;
 using System.ComponentModel;
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
 	/// <summary>
-	/// FontAwesome v5.0.6 by Dave Gandy (@davegandy)
+	/// FontAwesome by Dave Gandy (@davegandy)
 	///	The iconic SVG, font, and CSS toolkit
-	///	License https://fontawesome.com/license (Font: v5.0.6, C#: MIT License)
+	///	License https://fontawesome.com/license (C#: MIT License)
 	/// </summary>
 	public enum EFontAwesomeStyle
 	{

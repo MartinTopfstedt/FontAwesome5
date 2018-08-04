@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FontAwesome5.Extensions;
 using System.Windows.Media;
 
 namespace FontAwesome5.WPF.Extensions
@@ -12,51 +8,6 @@ namespace FontAwesome5.WPF.Extensions
     /// </summary>
     public static class EFontAwesomeIconExtensions
     {
-        /// <summary>
-        /// Get the Font Awesome Style of an icon
-        /// </summary>
-        public static EFontAwesomeStyle GetStyle(this EFontAwesomeIcon icon)
-        {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return EFontAwesomeStyle.None;
-
-            return info.Style;
-        }
-
-        /// <summary>
-        /// Get the SVG path of an icon
-        /// </summary>
-        public static bool GetSvg(this EFontAwesomeIcon icon, out string path, out int width, out int height)
-        {
-            path = string.Empty;
-            width = -1;
-            height = -1;
-
-
-            var svgInfo = icon.GetInformationAttribute<FontAwesomeSvgInformationAttribute>();
-            if (svgInfo == null)
-                return false;
-            
-            path = svgInfo.Path;
-            width = svgInfo.Width;
-            height = svgInfo.Height;
-
-            return true;
-        }
-
-        /// <summary>
-        /// Get the Unicode of an icon
-        /// </summary>
-        public static string GetUnicode(this EFontAwesomeIcon icon)
-        {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return char.ConvertFromUtf32(0);
-
-            return char.ConvertFromUtf32(info.Unicode);
-        }
-
         /// <summary>
         /// Get the Typeface of an icon
         /// </summary>
@@ -93,22 +44,6 @@ namespace FontAwesome5.WPF.Extensions
             }
 
             return null;
-        }
-
-        internal static T GetInformationAttribute<T>(this EFontAwesomeIcon icon) where T : class
-        {
-            if (icon == EFontAwesomeIcon.None)
-                return null;
-
-            var memInfo = typeof(EFontAwesomeIcon).GetMember(icon.ToString());
-            if (memInfo.Length == 0)
-                throw new Exception("EFontAwesomeIcon not found.");
-
-            var attributes = memInfo[0].GetCustomAttributes(typeof(T), false);
-            if (attributes.Length == 0)
-                throw new Exception("FontAwesomeInformationAttribute not found.");
-
-            return attributes[0] as T;
         }
     }
 }

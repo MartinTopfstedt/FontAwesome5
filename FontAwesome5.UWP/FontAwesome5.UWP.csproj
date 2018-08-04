@@ -35,6 +35,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -106,7 +107,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EFontAwesomeIcon.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="FontAwesome.cs" />
@@ -123,22 +123,22 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Font-Awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
+    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Brands-Regular-400.otf">
+      <Link>Fonts\Font Awesome 5 Brands-Regular-400.otf</Link>
+    </Content>
+    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Regular-400.otf">
+      <Link>Fonts\Font Awesome 5 Free-Regular-400.otf</Link>
+    </Content>
+    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Font-Awesome\web-fonts-with-css\webfonts\fa-brands-400.ttf">
-      <Link>Fonts\fa-brands-400.ttf</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Font-Awesome\web-fonts-with-css\webfonts\fa-regular-400.ttf">
-      <Link>Fonts\fa-regular-400.ttf</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="FontAwesome5.UWP.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{c5b304e1-fa5c-4a51-a2f2-816eb2d2a888}</Project>
+      <Name>FontAwesome5</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
