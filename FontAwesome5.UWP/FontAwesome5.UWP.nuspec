@@ -15,9 +15,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>fontawesome fontawesome5</tags>
     <copyright>Copyright ©2018 Codinion</copyright>
-    <dependencies>
-      <dependency id="FontAwesome5" version="5.2.0" />
-    </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
