@@ -16,15 +16,15 @@ Font-Awesome Version: 5.3.1</description>
 		</metadata>
 		<files>
 			<!-- .Net Standard 1.4 -->
-			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\netstandard1.4\" />
+			<file src="..\FontAwesome5\bin\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
 
 			<!-- .Net Framework 4.0 -->
-			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.dll" target="lib\net40\" />
 			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
 			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
 
 			<!-- UWP -->
-			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
