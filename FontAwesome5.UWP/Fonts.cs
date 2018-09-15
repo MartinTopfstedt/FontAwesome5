@@ -14,7 +14,7 @@ namespace FontAwesome5.UWP
         /// <summary>
         /// FontAwesome5 Solid FontFamily
         /// </summary>
-        public static readonly FontFamily SolidFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid");
+        public static readonly FontFamily SolidFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free");
         /// <summary>
         /// FontAwesome5 Brands FontFamily
         /// </summary>
