@@ -1,8 +1,8 @@
-# FontAwesome5.WPF
+# FontAwesome5
 
 [![Build status](https://ci.appveyor.com/api/projects/status/1uiro27lik6v76qk/branch/master?svg=true)](https://ci.appveyor.com/project/MartinTopfstedt/fontawesome5/branch/master)
 
-WPF controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+WPF and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 
 Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
@@ -12,9 +12,9 @@ Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
 #### Installation
 
-```Install-Package FontAwesome5.WPF```
+```Install-Package FontAwesome5``` (Includes WPF and UWP Controls)
 
-https://www.nuget.org/packages/FontAwesome5.WPF
+https://www.nuget.org/packages/FontAwesome5
 
 #### Usage XAML
 
@@ -38,7 +38,7 @@ The SvgAwesome can be used like the ImageAwesome.
 </Window>
 ```
 
-## Converters
+## Converters (WPF only)
 
 #### ImageSourceConverter
 
