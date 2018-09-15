@@ -6,7 +6,7 @@ WPF controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 
 Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
-+ Current Version: v5.2.0
++ Current Version: v5.3.1
 
 # Getting Started
 

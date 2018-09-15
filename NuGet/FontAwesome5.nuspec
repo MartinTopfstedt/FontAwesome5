@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+		<metadata>
+			<id>FontAwesome5</id>
+			<version>$version$</version>
+			<description>WPF and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+For examples https://github.com/MartinTopfstedt/FontAwesome5
+Font-Awesome Version: 5.3.1</description>
+			<authors>Codinion</authors>
+			<licenseUrl>https://github.com/MartinTopfstedt/FontAwesome5/blob/master/LICENSE</licenseUrl>
+			<projectUrl>https://github.com/MartinTopfstedt/FontAwesome5</projectUrl>
+			<iconUrl>https://raw.githubusercontent.com/MartinTopfstedt/FontAwesome5/master/icon.png</iconUrl>
+			<requireLicenseAcceptance>false</requireLicenseAcceptance>
+			<tags>fontawesome fontawesome5</tags>
+		<copyright>Copyright ©2018 Codinion</copyright>
+		</metadata>
+		<files>
+			<!-- .Net Standard 1.4 -->
+			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\netstandard1.4\" />
+
+			<!-- .Net Framework 4.0 -->
+			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
+
+			<!-- UWP -->
+			<file src="..\FontAwesome5\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+		</files>
+</package>
