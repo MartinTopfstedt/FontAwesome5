@@ -16,7 +16,7 @@ Font-Awesome Version: 5.3.1</description>
 		</metadata>
 		<files>
 			<!-- .Net Standard 1.4 -->
-			<file src="..\FontAwesome5\bin\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
+			<file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
 
 			<!-- .Net Framework 4.0 -->
 			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.dll" target="lib\net40\" />
