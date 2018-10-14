@@ -132,7 +132,6 @@
     <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Content>
-    <None Include="FontAwesome5.UWP.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj">

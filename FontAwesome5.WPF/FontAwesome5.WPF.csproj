@@ -92,9 +92,6 @@
     <Resource Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Resource>
-    <None Include="FontAwesome5.WPF.nuspec">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
