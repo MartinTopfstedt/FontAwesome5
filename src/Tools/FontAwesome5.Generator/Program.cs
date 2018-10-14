@@ -19,7 +19,7 @@ namespace FontAwesome5.Generator
 
         static void Generate(string inputDirectory)
         {
-            string outputFile = Path.Combine(inputDirectory, @"FontAwesome5\EFontAwesomeIcon.cs");            
+            string outputFile = Path.Combine(inputDirectory, @"src\FontAwesome5\EFontAwesomeIcon.cs");            
             var configFile = Path.Combine(inputDirectory, @"Font-Awesome\advanced-options\metadata\icons.json");
 
             var fa = new FontAwesomeManager(configFile);
