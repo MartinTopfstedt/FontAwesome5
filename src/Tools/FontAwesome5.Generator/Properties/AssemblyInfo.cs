@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FontAwesome.Generator")]
+[assembly: AssemblyTitle("FontAwesome5.Generator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Codinion")]
-[assembly: AssemblyProduct("FontAwesome.Generator")]
-[assembly: AssemblyCopyright("Copyright © Codinion 2018")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("FontAwesome5.Generator")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("682335a6-d0f2-43d1-a807-e9ea1e817c7f")]
+[assembly: Guid("36baf672-62dd-46a9-b6e6-1f3b0aa0d84b")]
 
 // Version information for an assembly consists of the following four values:
 //

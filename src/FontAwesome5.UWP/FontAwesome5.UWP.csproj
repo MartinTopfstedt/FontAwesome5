@@ -123,13 +123,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Brands-Regular-400.otf">
+    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Brands-Regular-400.otf">
       <Link>Fonts\Font Awesome 5 Brands-Regular-400.otf</Link>
     </Content>
-    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Regular-400.otf">
+    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Free-Regular-400.otf">
       <Link>Fonts\Font Awesome 5 Free-Regular-400.otf</Link>
     </Content>
-    <Content Include="..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
+    <Content Include="..\..\font-awesome\use-on-desktop\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Content>
   </ItemGroup>
