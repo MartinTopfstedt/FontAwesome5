@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+name: $(semanticVersion).$(rev:r)
+
+pool:
+  vmImage: 'VS2017-Win2016'
+
+variables:
+  solution: 'src/FontAwesome5.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetCommand@2
+  displayName: 'NuGet: Restore $(solution)'
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select' # Options: select, config    
+    includeNuGetOrg: true
+
+- task: VSBuild@1
+  displayName: 'Build: $(solution)'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Codinion'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'Codinion'
