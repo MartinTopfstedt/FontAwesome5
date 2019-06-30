@@ -28,8 +28,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(solution)'
+    versioningScheme: 'byBuildNumber'
+
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: Codinion'
+  displayName: 'Publish Artifact: FontAwesome5'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
-    ArtifactName: 'Codinion'
+    ArtifactName: 'FontAwesome5'
