@@ -10,10 +10,14 @@ pool:
 
 variables:
   solution: 'src/FontAwesome5.sln'
+  nuspec: 'src/NuGet/FontAwesome5.nuspec'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
+
+
+
 - task: NuGetCommand@2
   displayName: 'NuGet: Restore $(solution)'
   inputs:
@@ -31,7 +35,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: '$(solution)'
+    packagesToPack: '$(nuspec)'
     versioningScheme: 'byBuildNumber'
 
 - task: PublishBuildArtifacts@1
