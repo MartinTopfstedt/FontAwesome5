@@ -31,7 +31,7 @@ steps:
       git checkout master
       git pull
       cd ..
-      ./bin/FontAwesome5.Generator/FontAwesome5.Generator.exe
+      .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe
     workingDirectory: '.'
 
 - task: VSBuild@1
