@@ -16,8 +16,6 @@ variables:
 
 steps:
 
-
-
 - task: NuGetCommand@2
   displayName: 'NuGet: Restore $(solution)'
   inputs:
@@ -25,6 +23,15 @@ steps:
     feedsToUse: 'select' # Options: select, config    
     includeNuGetOrg: true
 
+- task: CmdLine@2
+  inputs:
+    script: |
+      git checkout master
+      git pull
+      cd ..
+      git commit -am "Updated FontAwesome"
+    workingDirectory: './Font-Awesome'
+    
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
