@@ -24,7 +24,7 @@ steps:
     includeNuGetOrg: true
 
 - task: CmdLine@2
-  displayName: 'Update FontAwesome'
+  displayName: 'Update FontAwesome SubModule'
   inputs:
     script: |
       cd Font-Awesome
