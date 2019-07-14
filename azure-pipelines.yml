@@ -24,14 +24,16 @@ steps:
     includeNuGetOrg: true
 
 - task: CmdLine@2
+  displayName: 'Update FontAwesome'
   inputs:
     script: |
+      cd Font-Awesome
       git checkout master
       git pull
       cd ..
-      git commit -am "Updated FontAwesome"
-    workingDirectory: './Font-Awesome'
-    
+      ./bin/FontAwesome5.Generator/FontAwesome5.Generator.exe
+    workingDirectory: '.'
+
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
@@ -40,6 +42,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
+  displayName: 'NuGet pack'
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
@@ -47,6 +50,7 @@ steps:
     includeSymbols: true
 
 - task: NuGetCommand@2
+  displayName: 'NuGet push'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
