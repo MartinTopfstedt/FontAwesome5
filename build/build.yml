@@ -1,0 +1,64 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+name: $(semanticVersion).$(rev:r)
+
+pool:
+  vmImage: 'VS2017-Win2016'
+
+variables:
+  solution: 'src/FontAwesome5.sln'
+  nuspec: 'src/NuGet/FontAwesome5.nuspec'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: NuGetCommand@2
+  displayName: 'NuGet: Restore $(solution)'
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select' # Options: select, config    
+    includeNuGetOrg: true
+
+- task: CmdLine@2
+  displayName: 'Update FontAwesome SubModule'
+  inputs:
+    script: |
+      cd Font-Awesome
+      git checkout master
+      git pull
+      cd ..
+      .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
+    workingDirectory: '.'
+
+- task: VSBuild@1
+  displayName: 'Build: $(solution)'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack'
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(nuspec)'
+    versioningScheme: 'byBuildNumber'
+    includeSymbols: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'cc1ed4db-2a6d-481d-a86c-96549d907768'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: FontAwesome5'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'FontAwesome5'

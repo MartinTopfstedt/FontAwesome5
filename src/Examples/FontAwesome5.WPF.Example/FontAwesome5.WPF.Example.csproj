@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome5, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9cfaf01297a008f8, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FontAwesome5.1.0.7\lib\net40\FontAwesome5.dll</HintPath>
+      <HintPath>..\..\packages\FontAwesome5.1.0.10\lib\net40\FontAwesome5.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome5.WPF, Version=1.0.7.77, Culture=neutral, PublicKeyToken=9cfaf01297a008f8, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FontAwesome5.1.0.7\lib\net40\FontAwesome5.WPF.dll</HintPath>
+    <Reference Include="FontAwesome5.WPF, Version=1.0.10.90, Culture=neutral, PublicKeyToken=9cfaf01297a008f8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome5.1.0.10\lib\net40\FontAwesome5.WPF.dll</HintPath>
     </Reference>
     <Reference Include="PropertyChanged, Version=2.5.13.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.2.5.13\lib\netstandard1.0\PropertyChanged.dll</HintPath>
