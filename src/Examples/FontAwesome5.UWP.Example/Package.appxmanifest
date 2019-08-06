@@ -8,7 +8,7 @@
 
   <Identity
     Name="f7777674-34c1-4422-8ff0-e7f052ae7572"
-    Publisher="CN=dhovey"
+    Publisher="CN=Codinion"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="f7777674-34c1-4422-8ff0-e7f052ae7572" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
