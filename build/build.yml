@@ -16,6 +16,12 @@ variables:
 
 steps:
 
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.0.100-preview8-013656'
+    includePreviewVersions: true
+
 - task: NuGetCommand@2
   displayName: 'NuGet: Restore $(solution)'
   inputs:
