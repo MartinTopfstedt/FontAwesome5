@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.WPF", "FontAwesome5.WPF\FontAwesome5.WPF.csproj", "{064DF8AB-301D-4A3D-883F-2243DAA66605}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B1387CB2-E6D3-4266-B1E7-065826845F0E}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
@@ -23,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5DB18EB6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.Generator", "Tools\FontAwesome5.Generator\FontAwesome5.Generator.csproj", "{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.WPF.NET40", "FontAwesome5.WPF.NET40\FontAwesome5.WPF.NET40.csproj", "{064DF8AB-301D-4A3D-883F-2243DAA66605}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome5.WPF.NET.Core", "FontAwesome5.WPF.NET.Core\FontAwesome5.WPF.NET.Core.csproj", "{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,22 +37,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|ARM.Build.0 = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x64.Build.0 = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x86.Build.0 = Debug|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|Any CPU.Build.0 = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|ARM.ActiveCfg = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|ARM.Build.0 = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x64.ActiveCfg = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x64.Build.0 = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x86.ActiveCfg = Release|Any CPU
-		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x86.Build.0 = Release|Any CPU
 		{3DA649D8-590A-4BBD-8181-F01BC81748B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3DA649D8-590A-4BBD-8181-F01BC81748B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA649D8-590A-4BBD-8181-F01BC81748B7}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -98,6 +84,38 @@ Global
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x64.Build.0 = Release|Any CPU
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x86.ActiveCfg = Release|Any CPU
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x86.Build.0 = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|ARM.Build.0 = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x64.Build.0 = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Debug|x86.Build.0 = Debug|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|ARM.ActiveCfg = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|ARM.Build.0 = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x64.ActiveCfg = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x64.Build.0 = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x86.ActiveCfg = Release|Any CPU
+		{064DF8AB-301D-4A3D-883F-2243DAA66605}.Release|x86.Build.0 = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|ARM.Build.0 = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|x64.Build.0 = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Debug|x86.Build.0 = Debug|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|ARM.Build.0 = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|x64.ActiveCfg = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|x64.Build.0 = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|x86.ActiveCfg = Release|Any CPU
+		{D7625E06-1CC8-4DEA-B09F-92DF24D22E40}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

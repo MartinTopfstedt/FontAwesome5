@@ -3,7 +3,7 @@
 		<metadata>
 			<id>FontAwesome5</id>
 			<version>$version$</version>
-			<description>WPF and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+			<description>WPF (.Net and .Net Core 3.0) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 For examples https://github.com/MartinTopfstedt/FontAwesome5
 Font-Awesome Version: 5.10.2</description>
 			<authors>Codinion</authors>
@@ -19,11 +19,17 @@ Font-Awesome Version: 5.10.2</description>
 			<file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
 
 			<!-- .Net Framework 4.0 -->
-			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.dll" target="lib\net40\" />
-			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
-			<file src="..\FontAwesome5.WPF\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF.NET40\bin\Release\FontAwesome5.dll" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF.NET40\bin\Release\FontAwesome5.WPF.dll" target="lib\net40\" />
+			<file src="..\FontAwesome5.WPF.NET40\bin\Release\FontAwesome5.WPF.xml" target="lib\net40\" />
 
-			<!-- UWP -->
+      <!-- .Net Core Framework 3.0 -->
+      <file src="..\FontAwesome5.WPF.NET.Core\bin\Release\netcoreapp3.0\FontAwesome5.dll" target="lib\netcoreapp3.0\" />
+      <file src="..\FontAwesome5.WPF.NET.Core\bin\Release\netcoreapp3.0\FontAwesome5.WPF.dll" target="lib\netcoreapp3.0\" />
+      <file src="..\FontAwesome5.WPF.NET.Core\bin\Release\netcoreapp3.0\FontAwesome5.WPF.xml" target="lib\netcoreapp3.0\" />
+
+
+      <!-- UWP -->
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
 			<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
