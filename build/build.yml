@@ -6,7 +6,7 @@
 name: $(semanticVersion).$(rev:r)
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'windows-latest'
 
 variables:
   solution: 'src/FontAwesome5.sln'
@@ -15,6 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: 3.x
+    includePreviewVersions: true
 
 - task: NuGetCommand@2
   displayName: 'NuGet: Restore $(solution)'
