@@ -92,13 +92,15 @@
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
     </Resource>
-    <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj">
       <Project>{c5b304e1-fa5c-4a51-a2f2-816eb2d2a888}</Project>
       <Name>FontAwesome5</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
