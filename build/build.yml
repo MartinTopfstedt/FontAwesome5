@@ -21,13 +21,6 @@ steps:
     packageType: 'sdk'
     version: '3.x'
     includePreviewVersions: true
-    installationPath: '$(Agent.ToolsDirectory)/dotnet3'
-    
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '2.x'
-    installationPath: '$(Agent.ToolsDirectory)/dotnet2'
 
 - task: NuGetToolInstaller@1
   inputs:
@@ -40,6 +33,12 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: 'select' # Options: select, config    
     includeNuGetOrg: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '$(solution)'
+    feedsToUse: 'select'
 
 - task: CmdLine@2
   displayName: 'Update FontAwesome SubModule'
