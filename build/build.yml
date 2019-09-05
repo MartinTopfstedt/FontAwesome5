@@ -27,10 +27,10 @@ steps:
     versionSpec: 
     checkLatest: true
 
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   inputs:
     command: 'restore'
-    projects: '$(solution)'
+    restoreSolution: '**/*.sln'
     feedsToUse: 'select'
     verbosityRestore: 'Normal'
 
@@ -51,7 +51,6 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    restoreNugetPackages: true
     msbuildArchitecture: 'x64'
 
 - task: NuGetCommand@2
