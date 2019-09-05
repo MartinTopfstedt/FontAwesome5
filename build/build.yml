@@ -15,12 +15,17 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '2.2.300'
+    performMultiLevelLookup: true
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
     version: '3.0.100-preview8-013656'
     includePreviewVersions: true
+    performMultiLevelLookup: true
 
 - task: NuGetToolInstaller@1
   inputs:
