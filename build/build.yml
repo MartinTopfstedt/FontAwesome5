@@ -45,11 +45,6 @@ steps:
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '$(solution)'
-
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
