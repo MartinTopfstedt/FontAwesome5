@@ -19,11 +19,6 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: '2.2.x'
-
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
     version: '3.x'
     includePreviewVersions: true
 
@@ -32,18 +27,12 @@ steps:
     versionSpec: 
     checkLatest: true
 
-- task: NuGetCommand@2
-  displayName: 'NuGet: Restore $(solution)'
-  inputs:
-    restoreSolution: '$(solution)'
-    feedsToUse: 'select' # Options: select, config    
-    includeNuGetOrg: true
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
     projects: '$(solution)'
     feedsToUse: 'select'
+    verbosityRestore: 'Normal'
 
 - task: CmdLine@2
   displayName: 'Update FontAwesome SubModule'
@@ -56,12 +45,19 @@ steps:
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    restoreNugetPackages: true
+    msbuildArchitecture: 'x64'
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
