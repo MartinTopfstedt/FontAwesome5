@@ -38,7 +38,7 @@ steps:
     command: 'restore'
     projects: '**/*.sln'
     feedsToUse: 'select'
-    
+
 - task: CmdLine@2
   displayName: 'Update FontAwesome SubModule'
   inputs:
@@ -49,6 +49,11 @@ steps:
       cd ..
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
+    
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
 
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
