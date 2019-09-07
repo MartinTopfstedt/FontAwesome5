@@ -33,7 +33,12 @@ steps:
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
     verbosityRestore: 'Normal'
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.sln'
+    feedsToUse: 'select'
+    
 - task: CmdLine@2
   displayName: 'Update FontAwesome SubModule'
   inputs:
