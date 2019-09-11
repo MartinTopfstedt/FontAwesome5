@@ -54,13 +54,20 @@ steps:
   inputs:
     command: 'build'
     projects: |
-      src/FontAwesome5/FontAwesome5.csproj
-      src/FontAwesome5.WPF.NET.Core/FontAwesome5.WPF.NET.Core.csproj
+      src/FontAwesome5.NetCore.sln
 
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
-    solution: 'src/FontAwesome5.UWP/FontAwesome5.UWP.csproj'
+    solution: 'src/FontAwesome5.Net40.sln'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    msbuildArchitecture: 'x64'
+
+- task: VSBuild@1
+  displayName: 'Build: $(solution)'
+  inputs:
+    solution: 'src/FontAwesome5.UWP.sln'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
