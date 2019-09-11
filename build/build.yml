@@ -50,10 +50,17 @@ steps:
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: |
+      src/FontAwesome5/FontAwesome5.csproj
+      src/FontAwesome5.WPF.NET.Core/FontAwesome5.WPF.NET.Core.csproj
+
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
   inputs:
-    solution: '$(solution)'
+    solution: 'src/FontAwesome5.UWP/FontAwesome5.UWP.csproj'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
