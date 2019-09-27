@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5DB18EB6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.Generator", "Tools\FontAwesome5.Generator\FontAwesome5.Generator.csproj", "{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.WPF.Net40", "FontAwesome5.WPF.NET40\FontAwesome5.WPF.Net40.csproj", "{064DF8AB-301D-4A3D-883F-2243DAA66605}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.Net40", "FontAwesome5.Net40\FontAwesome5.Net40.csproj", "{064DF8AB-301D-4A3D-883F-2243DAA66605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

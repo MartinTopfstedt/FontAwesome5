@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace FontAwesome5.Extensions
 {
+    /// <summary>
+    /// Control extensions
+    /// </summary>
     public static class ControlExtensions
     {
         /// <summary>
@@ -35,10 +36,7 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new RotateTransform()
-                {
-                    Angle = 0
-                });
+                transformGroup.Children.Add(new RotateTransform(0.0));
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }
@@ -56,7 +54,9 @@ namespace FontAwesome5.Extensions
             storyboard.Children.Add(animation);
 
             Storyboard.SetTarget(animation, control);
-            Storyboard.SetTargetProperty(animation, "(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)");
+            Storyboard.SetTargetProperty(animation,
+                new PropertyPath("(0).(1)[0].(2)", UIElement.RenderTransformProperty,
+                    TransformGroup.ChildrenProperty, RotateTransform.AngleProperty));
 
             storyboard.Begin();
             control.Resources.Add(SpinnerStoryBoardName, storyboard);
@@ -97,10 +97,7 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new RotateTransform()
-                {
-                    Angle = control.Rotation
-                });
+                transformGroup.Children.Add(new RotateTransform(control.Rotation));
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }
@@ -128,15 +125,10 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new ScaleTransform()
-                {
-                    ScaleX = scaleX,
-                    ScaleY = scaleY
-                });
+                transformGroup.Children.Add(new ScaleTransform(scaleX, scaleY));
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }
         }
     }
-
 }

@@ -10,6 +10,7 @@ namespace FontAwesome5
     /// <summary>
     /// Defines the different flip orientations that a icon can have.
     /// </summary>
+    [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
     public enum EFlipOrientation
     {
         /// <summary>

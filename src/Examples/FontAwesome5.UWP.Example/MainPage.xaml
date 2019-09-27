@@ -5,7 +5,7 @@
     xmlns:local="using:FontAwesome5.UWP.Example"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:fa5="using:FontAwesome5.UWP"
+    xmlns:fa5="using:FontAwesome5"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
      

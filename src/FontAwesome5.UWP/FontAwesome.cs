@@ -1,9 +1,8 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using FontAwesome5.Extensions;
-using FontAwesome5.UWP.Extensions;
 
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
     /// <summary>
     /// Represents ann icon that uses the FontAwesome font

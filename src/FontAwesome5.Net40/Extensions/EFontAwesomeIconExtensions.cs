@@ -1,5 +1,5 @@
-﻿using Windows.UI.Xaml.Media;
-using FontAwesome5.Extensions;
+﻿using FontAwesome5.Extensions;
+using System.Windows.Media;
 
 namespace FontAwesome5.Extensions
 {
@@ -9,13 +9,32 @@ namespace FontAwesome5.Extensions
     public static class EFontAwesomeIconExtensions
     {
         /// <summary>
+        /// Get the Typeface of an icon
+        /// </summary>
+        public static Typeface GetTypeFace(this EFontAwesomeIcon icon)
+        {
+            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
+            if (info == null)
+                return Fonts.RegularTypeface;
+
+            switch (info.Style)
+            {
+                case EFontAwesomeStyle.Regular: return Fonts.RegularTypeface;
+                case EFontAwesomeStyle.Solid: return Fonts.SolidTypeface;
+                case EFontAwesomeStyle.Brands: return Fonts.BrandsTypeface;
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Get the FontFamily of an icon
         /// </summary>
         public static FontFamily GetFontFamily(this EFontAwesomeIcon icon)
         {
             var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
             if (info == null)
-                return FontFamily.XamlAutoFontFamily;
+                return Fonts.RegularFontFamily;
             
             switch (info.Style)
             {

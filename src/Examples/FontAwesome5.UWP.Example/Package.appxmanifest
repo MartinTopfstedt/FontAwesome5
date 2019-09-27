@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>FontAwesome5.UWP.Example</DisplayName>
-    <PublisherDisplayName>dhovey</PublisherDisplayName>
+    <PublisherDisplayName>Codinion</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
