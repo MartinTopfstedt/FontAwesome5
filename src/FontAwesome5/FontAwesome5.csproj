@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <DocumentationFile>$(OutDir)\FontAwesome5.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../FontAwesome5.NET40/Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
