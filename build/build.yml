@@ -35,6 +35,7 @@ steps:
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
     verbosityRestore: 'Normal'
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore (All Solutions)'
   inputs:
@@ -53,25 +54,10 @@ steps:
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build .NET Core 3.0'
-  inputs:
-    command: 'build'
-    projects: |
-      src/FontAwesome5.NetCore30.sln
-
 - task: VSBuild@1
-  displayName: 'Build .NET 4.0'
+  displayName: 'Build: $(solution)'
   inputs:
-    solution: 'src/FontAwesome5.Net40.sln'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
-
-- task: VSBuild@1
-  displayName: 'Build UWP'
-  inputs:
-    solution: 'src/FontAwesome5.UWP.sln'
+    solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
