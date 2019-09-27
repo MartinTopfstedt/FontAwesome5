@@ -54,7 +54,7 @@ steps:
   inputs:
     command: 'build'
     projects: |
-      src/FontAwesome5.NetCore.sln
+      src/FontAwesome5.NetCore30.sln
 
 - task: VSBuild@1
   displayName: 'Build: $(solution)'
