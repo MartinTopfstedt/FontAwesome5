@@ -55,10 +55,18 @@ steps:
     workingDirectory: '.'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build: $(solution)'
+  displayName: 'Build: Net Core 3.0'
   inputs:
     command: 'build'
-    projects: '$(solution)'
+    projects: 'src/FontAwesome5.NetCore30.sln'
+
+- task: VSBuild@1
+  inputs:
+    solution: 'src/FontAwesome5.Net40.sln'
+
+    - task: VSBuild@1
+  inputs:
+    solution: 'src/FontAwesome5.UWP.sln'
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
