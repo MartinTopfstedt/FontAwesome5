@@ -61,10 +61,12 @@ steps:
     projects: 'src/FontAwesome5.NetCore30.sln'
 
 - task: VSBuild@1
+  displayName: 'Build: Net 4.0'
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
 
 - task: VSBuild@1
+  displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
 
