@@ -54,13 +54,11 @@ steps:
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
   displayName: 'Build: $(solution)'
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
+    command: 'build'
+    projects: '$(solution)'
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
