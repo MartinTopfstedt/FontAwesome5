@@ -61,6 +61,7 @@ steps:
   inputs:
     command: 'build'
     projects: 'src/FontAwesome5.NetCore30.sln'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: VSBuild@1
   displayName: 'Build: Net 4.0'
