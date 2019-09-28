@@ -64,7 +64,7 @@ steps:
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
 
-    - task: VSBuild@1
+- task: VSBuild@1
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
 
