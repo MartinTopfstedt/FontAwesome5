@@ -66,11 +66,15 @@ steps:
   displayName: 'Build: Net 4.0'
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: VSBuild@1
   displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
