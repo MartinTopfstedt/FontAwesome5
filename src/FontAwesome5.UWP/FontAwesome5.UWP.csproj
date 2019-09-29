@@ -133,6 +133,11 @@
     <EmbeddedResource Include="Properties\FontAwesome5.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
+      <Version>2.9.4</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
     </PackageReference>
