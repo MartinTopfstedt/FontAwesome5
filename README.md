@@ -12,7 +12,7 @@ Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
 #### Installation
 
-```Install-Package FontAwesome5``` (Includes WPF and UWP Controls)
+```Install-Package FontAwesome5```
 
 https://www.nuget.org/packages/FontAwesome5
 
