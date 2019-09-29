@@ -38,7 +38,7 @@ steps:
   displayName: 'NuGet Restore (All Solutions)'
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    restoreSolution: 'src/*.sln'
     feedsToUse: 'select'
     verbosityRestore: 'Normal'
 
@@ -46,7 +46,7 @@ steps:
   displayName: 'dotnet restore (All Solutions)'
   inputs:
     command: 'restore'
-    projects: '**/*.sln'
+    projects: 'src/*.sln'
     feedsToUse: 'select'
 
 - task: CmdLine@2
