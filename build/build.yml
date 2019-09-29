@@ -14,9 +14,13 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-
-
 steps:
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    configFilePath: 'build/GitVersion.yml'
+    updateAssemblyInfo: true
+
 - task: UseDotNet@2
   displayName: 'Install .NET Core 3.x'
   inputs:
@@ -78,13 +82,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack'
+- task: NuGetCommand@2
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: '$(GitVersion.NuGetVersionV2)'
     includeSymbols: true
-
 - task: NuGetCommand@2
   displayName: 'NuGet push'
   inputs:
