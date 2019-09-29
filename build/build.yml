@@ -52,15 +52,7 @@ steps:
     command: 'restore'
     projects: 'src/*.sln'
     feedsToUse: 'select'
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet publish FontAwesome5.Generator'
-  inputs:
-    command: 'publish'
-    publishWebProjects: false
-    projects: 'src\Tools\FontAwesome5.Generator\FontAwesome5.Generator.csproj'
-    zipAfterPublish: false
-    modifyOutputPath: false
-    
+
 - task: CmdLine@2
   displayName: 'Update FontAwesome SubModule'
   inputs:
