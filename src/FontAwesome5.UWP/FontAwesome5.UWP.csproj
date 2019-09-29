@@ -140,12 +140,15 @@
   <ItemGroup>
     <Content Include="..\..\font-awesome\otfs\Font Awesome 5 Brands-Regular-400.otf">
       <Link>Fonts\Font Awesome 5 Brands-Regular-400.otf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\..\font-awesome\otfs\Font Awesome 5 Free-Regular-400.otf">
       <Link>Fonts\Font Awesome 5 Free-Regular-400.otf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\..\font-awesome\otfs\Font Awesome 5 Free-Solid-900.otf">
       <Link>Fonts\Font Awesome 5 Free-Solid-900.otf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
