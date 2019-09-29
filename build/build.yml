@@ -21,6 +21,12 @@ steps:
     configFilePath: 'build/GitVersion.yml'
     updateAssemblyInfo: true
 
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.NuGetVersionV2)
+
 - task: UseDotNet@2
   displayName: 'Install .NET Core 3.x'
   inputs:
@@ -86,9 +92,8 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
-    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
     includeSymbols: true
-    buildProperties: '-version $(GitVersion.NuGetVersionV2)'
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
