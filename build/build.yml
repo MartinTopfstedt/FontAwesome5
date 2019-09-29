@@ -90,9 +90,9 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
-    versioningScheme: 'off'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersionV2'
     includeSymbols: true
-    buildProperties: '-version $(GitVersion.NuGetVersionV2)'
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
