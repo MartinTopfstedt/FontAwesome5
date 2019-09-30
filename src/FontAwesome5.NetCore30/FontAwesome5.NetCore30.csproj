@@ -12,6 +12,10 @@
 
   <PropertyGroup>
     <DocumentationFile>$(OutDir)\FontAwesome5.NetCore30.xml</DocumentationFile>
+    <Authors>Martin Topfstedt</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Codinion 2018</Copyright>
+    <Company>Codinion</Company>
   </PropertyGroup>
 
   <ItemGroup>

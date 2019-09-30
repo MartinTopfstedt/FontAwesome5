@@ -7,14 +7,16 @@
 For examples https://github.com/MartinTopfstedt/FontAwesome5
 Font-Awesome Version: 5.11.2</description>
 			<authors>Codinion</authors>
-			<licenseUrl>https://github.com/MartinTopfstedt/FontAwesome5/blob/master/LICENSE</licenseUrl>
+      <license type="expression">MIT</license>
 			<projectUrl>https://github.com/MartinTopfstedt/FontAwesome5</projectUrl>
-			<iconUrl>https://raw.githubusercontent.com/MartinTopfstedt/FontAwesome5/master/icon.png</iconUrl>
+			<icon>images\icon.png</icon>
 			<requireLicenseAcceptance>false</requireLicenseAcceptance>
 			<tags>fontawesome fontawesome5</tags>
 		<copyright>Copyright © 2019 Codinion</copyright>
 		</metadata>
 		<files>
+      <file src="..\icon.png" target="images\" />
+      
 			<!-- .Net Standard 1.4 -->
 			<file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
       <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.xml" target="lib\netstandard1.4\" />
