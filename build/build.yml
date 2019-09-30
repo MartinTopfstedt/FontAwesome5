@@ -3,8 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-name: $(semanticVersion).$(rev:r)
-
 pool:
   vmImage: 'windows-latest'
 
@@ -20,6 +18,12 @@ steps:
     runtime: 'core'
     configFilePath: 'build/GitVersion.yml'
     updateAssemblyInfo: true
+
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.NuGetVersionV2)
 
 - task: UseDotNet@2
   displayName: 'Install .NET Core 3.x'
@@ -59,13 +63,19 @@ steps:
       cd ..
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
+- task: DotNetCoreCLI@2
+  displayName: 'Build: FontAwesome5'
+  inputs:
+    command: 'build'
+    projects: 'src/FontAwesome5/FontAwesome5.csproj'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.SemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build: Net Core 3.0'
   inputs:
     command: 'build'
     projects: 'src/FontAwesome5.NetCore30.sln'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.SemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: VSBuild@1
   displayName: 'Build: Net 4.0'
@@ -82,13 +92,14 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
-- task: NuGetCommand@2
+  displayName: 'NuGet pack'
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
     versioningScheme: 'byEnvVar'
-    versionEnvVar: '$(GitVersion.NuGetVersionV2)'
+    versionEnvVar: 'GitVersion.NuGetVersionV2'
     includeSymbols: true
+
 - task: NuGetCommand@2
   displayName: 'NuGet push'
   inputs:
