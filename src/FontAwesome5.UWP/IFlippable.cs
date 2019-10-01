@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
     /// <summary>
     /// Defines the different flip orientations that a icon can have.

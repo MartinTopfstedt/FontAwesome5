@@ -1,14 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net4.0</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;net4.0;netcoreapp3.0</TargetFrameworks>
     <Company>Codinion</Company>
     <Authors>Martin Topfstedt</Authors>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net4.0'">
+  <PropertyGroup>
+    <DocumentationFile>$(OutDir)\FontAwesome5.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../FontAwesome5.WPF.NET40/Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>../FontAwesome5.NET40/Key.snk</AssemblyOriginatorKeyFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Codinion 2018</Copyright>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">

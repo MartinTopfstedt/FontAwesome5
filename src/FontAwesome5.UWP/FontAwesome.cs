@@ -1,9 +1,8 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using FontAwesome5.Extensions;
-using FontAwesome5.UWP.Extensions;
 
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
     /// <summary>
     /// Represents ann icon that uses the FontAwesome font
@@ -15,29 +14,32 @@ namespace FontAwesome5.UWP
             
         }
 
+        /// <summary>
+        /// Identifies the FontAwesome.Icon dependency property.
+        /// </summary>
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
             nameof(Icon), typeof(EFontAwesomeIcon), typeof(FontAwesome), new PropertyMetadata(EFontAwesomeIcon.None, Icon_PropertyChangedCallback));
 
         /// <summary>
-        /// Identifies the FontAwesome.WPF.FontAwesome.Spin dependency property.
+        /// Identifies the FontAwesome.Spin dependency property.
         /// </summary>
         public static readonly DependencyProperty SpinProperty = DependencyProperty.Register(
             nameof(Spin), typeof(bool), typeof(FontAwesome), new PropertyMetadata(false, OnSpinPropertyChanged));
 
         /// <summary>
-        /// Identifies the FontAwesome.WPF.FontAwesome.SpinDuration dependency property.
+        /// Identifies the FontAwesome.SpinDuration dependency property.
         /// </summary>
         public static readonly DependencyProperty SpinDurationProperty = DependencyProperty.Register(
             nameof(SpinDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, SpinDurationChanged));
 
         /// <summary>
-        /// Identifies the FontAwesome.WPF.FontAwesome.Rotation dependency property.
+        /// Identifies the FontAwesome.Rotation dependency property.
         /// </summary>
         public static readonly DependencyProperty RotationProperty = DependencyProperty.Register(
             nameof(Rotation), typeof(double), typeof(FontAwesome), new PropertyMetadata(0d, RotationChanged));
 
         /// <summary>
-        /// Identifies the FontAwesome.WPF.FontAwesome.FlipOrientation dependency property.
+        /// Identifies the FontAwesome.FlipOrientation dependency property.
         /// </summary>
         public static readonly DependencyProperty FlipOrientationProperty = DependencyProperty.Register(
             nameof(FlipOrientation), typeof(EFlipOrientation), typeof(FontAwesome), new PropertyMetadata(EFlipOrientation.Normal, FlipOrientationChanged));
@@ -98,9 +100,7 @@ namespace FontAwesome5.UWP
 
         private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as FontAwesome;
-
-            if (null == fontAwesome || !fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
 
             fontAwesome.StopSpin();
             fontAwesome.BeginSpin();
@@ -109,7 +109,7 @@ namespace FontAwesome5.UWP
         /// <summary>
         /// Gets or sets the current rotation (angle).
         /// </summary>
-        public double Rotation
+        public new double Rotation
         {
             get { return (double)GetValue(RotationProperty); }
             set { SetValue(RotationProperty, value); }

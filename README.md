@@ -6,13 +6,13 @@ WPF (.Net and .Net Core 3.0) and UWP controls for the iconic SVG, font, and CSS 
 
 Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
-+ Current Version: v5.10.2
++ Current Version: v5.11.2
 
 # Getting Started
 
 #### Installation
 
-```Install-Package FontAwesome5``` (Includes WPF and UWP Controls)
+```Install-Package FontAwesome5```
 
 https://www.nuget.org/packages/FontAwesome5
 

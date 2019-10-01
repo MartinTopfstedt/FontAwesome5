@@ -3,8 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-name: $(semanticVersion).$(rev:r)
-
 pool:
   vmImage: 'windows-latest'
 
@@ -15,10 +13,23 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    configFilePath: 'build/GitVersion.yml'
+    updateAssemblyInfo: true
+
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.NuGetVersionV2)
+
 - task: UseDotNet@2
+  displayName: 'Install .NET Core 3.x'
   inputs:
     packageType: 'sdk'
-    version: '3.0.100-preview8-013656'
+    version: '3.x'
     includePreviewVersions: true
     performMultiLevelLookup: true
 
@@ -28,15 +39,18 @@ steps:
     checkLatest: true
 
 - task: NuGetCommand@2
+  displayName: 'NuGet Restore (All Solutions)'
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    restoreSolution: 'src/*.sln'
     feedsToUse: 'select'
     verbosityRestore: 'Normal'
+
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet restore (All Solutions)'
   inputs:
     command: 'restore'
-    projects: '**/*.sln'
+    projects: 'src/*.sln'
     feedsToUse: 'select'
 
 - task: CmdLine@2
@@ -51,33 +65,35 @@ steps:
     workingDirectory: '.'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Build: Net Core 3.0'
   inputs:
     command: 'build'
-    projects: |
-      src/FontAwesome5.NetCore.sln
+    projects: 'src/FontAwesome5.NetCore30.sln'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: VSBuild@1
-  displayName: 'Build: $(solution)'
+  displayName: 'Build: Net 4.0'
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
 
 - task: VSBuild@1
-  displayName: 'Build: $(solution)'
+  displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
   inputs:
     command: 'pack'
     packagesToPack: '$(nuspec)'
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersionV2'
     includeSymbols: true
 
 - task: NuGetCommand@2

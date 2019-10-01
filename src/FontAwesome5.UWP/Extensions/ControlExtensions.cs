@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
-namespace FontAwesome5.UWP.Extensions
+namespace FontAwesome5.Extensions
 {
     public static class ControlExtensions
     {

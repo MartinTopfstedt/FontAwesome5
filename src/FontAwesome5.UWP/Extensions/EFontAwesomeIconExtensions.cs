@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml.Media;
 using FontAwesome5.Extensions;
 
-namespace FontAwesome5.UWP.Extensions
+namespace FontAwesome5.Extensions
 {
     /// <summary>
     /// EFontAwesomeIcon extensions

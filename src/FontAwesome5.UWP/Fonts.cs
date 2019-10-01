@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml.Media;
 
-namespace FontAwesome5.UWP
+namespace FontAwesome5
 {
     /// <summary>
     /// Provides FontFamilies and Typefaces of FontAwesome5.
