@@ -63,24 +63,19 @@ steps:
       cd ..
       .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
-- task: DotNetCoreCLI@2
-  displayName: 'Build: FontAwesome5'
-  inputs:
-    command: 'build'
-    projects: 'src/FontAwesome5/FontAwesome5.csproj'
-    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.SemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build: Net Core 3.0'
   inputs:
     command: 'build'
     projects: 'src/FontAwesome5.NetCore30.sln'
-    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.SemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: VSBuild@1
   displayName: 'Build: Net 4.0'
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -88,6 +83,7 @@ steps:
   displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
