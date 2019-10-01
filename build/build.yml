@@ -69,13 +69,13 @@ steps:
   inputs:
     command: 'build'
     projects: 'src/FontAwesome5.NetCore30.sln'
-    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
 
 - task: VSBuild@1
   displayName: 'Build: Net 4.0'
   inputs:
     solution: 'src/FontAwesome5.Net40.sln'
-    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -83,7 +83,7 @@ steps:
   displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
-    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);AssemblyFileVersion=$(GitVersion.AssemblySemFileVer)'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
