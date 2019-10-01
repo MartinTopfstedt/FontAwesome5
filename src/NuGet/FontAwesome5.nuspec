@@ -12,7 +12,7 @@ Font-Awesome Version: 5.11.2</description>
 			<icon>icon.png</icon>
 			<requireLicenseAcceptance>false</requireLicenseAcceptance>
 			<tags>fontawesome fontawesome5</tags>
-		<copyright>Copyright © 2019 Codinion</copyright>
+		  <copyright>Copyright © 2019 Codinion</copyright>
 		</metadata>
 		<files>
       <file src="..\icon.png" target="" />
