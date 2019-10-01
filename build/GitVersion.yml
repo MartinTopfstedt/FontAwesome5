@@ -1,6 +1,6 @@
 assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-scheme: MajorMinorPatchTag
-assembly-informational-format: '{MajorMinorPatchTag}
+assembly-informational-format: '{MajorMinorPatchTag}'
 mode: ContinuousDeployment
 tag-prefix: '[vV]'
 continuous-delivery-fallback-tag: ci
