@@ -45,12 +45,6 @@
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FontAwesome5, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9cfaf01297a008f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome5.1.0.14.46\lib\net40\FontAwesome5.dll</HintPath>
-    </Reference>
-    <Reference Include="FontAwesome5.Net40, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9cfaf01297a008f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome5.1.0.14.46\lib\net40\FontAwesome5.Net40.dll</HintPath>
-    </Reference>
     <Reference Include="PropertyChanged, Version=2.5.13.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.2.5.13\lib\netstandard1.0\PropertyChanged.dll</HintPath>
       <Private>True</Private>
@@ -125,6 +119,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FontAwesome5.Net40\FontAwesome5.Net40.csproj">
+      <Project>{064df8ab-301d-4a3d-883f-2243daa66605}</Project>
+      <Name>FontAwesome5.Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{30c458c0-e963-4972-b9d3-8fb51e434f7c}</Project>
+      <Name>FontAwesome5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

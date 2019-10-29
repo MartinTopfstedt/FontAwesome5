@@ -138,6 +138,12 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FontAwesome5.UWP\FontAwesome5.UWP.csproj">
+      <Project>{3da649d8-590a-4bbd-8181-f01bc81748b7}</Project>
+      <Name>FontAwesome5.UWP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
