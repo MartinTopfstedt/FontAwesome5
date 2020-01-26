@@ -1,6 +1,6 @@
 # FontAwesome5
 
-[![Build status](https://ci.appveyor.com/api/projects/status/1uiro27lik6v76qk/branch/master?svg=true)](https://ci.appveyor.com/project/MartinTopfstedt/fontawesome5/branch/master) [![Build Status](https://dev.azure.com/codinion/FontAwesome5/_apis/build/status/MartinTopfstedt.FontAwesome5?branchName=master)](https://dev.azure.com/codinion/FontAwesome5/_build/latest?definitionId=11&branchName=master)
+[![Build Status](https://dev.azure.com/codinion/FontAwesome5/_apis/build/status/MartinTopfstedt.FontAwesome5?branchName=master)](https://dev.azure.com/codinion/FontAwesome5/_build/latest?definitionId=11&branchName=master)
 
 WPF (.Net and .Net Core 3.0) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 
