@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net4.0;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;net40</TargetFrameworks>
     <Company>Codinion</Company>
     <Authors>Martin Topfstedt</Authors>
     <SignAssembly>true</SignAssembly>

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FontAwesome5.Net40.Example.ViewModels
 {
@@ -20,7 +21,13 @@ namespace FontAwesome5.Net40.Example.ViewModels
             SpinDuration = 5;
             FontSize = 30;
             Rotation = 0;
+
+            Visibilities = Enum.GetValues(typeof(Visibility)).Cast<Visibility>().ToList();
+            Visibility = Visibility.Visible;
         }
+
+        public Visibility Visibility { get; set; }
+        public List<Visibility> Visibilities { get; set; } = new List<Visibility>();
 
         public EFontAwesomeIcon SelectedIcon { get; set; }
 

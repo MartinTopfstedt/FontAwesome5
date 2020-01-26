@@ -131,12 +131,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FontAwesome5">
-      <Version>1.0.14.46</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FontAwesome5.UWP\FontAwesome5.UWP.csproj">
+      <Project>{3da649d8-590a-4bbd-8181-f01bc81748b7}</Project>
+      <Name>FontAwesome5.UWP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FontAwesome5\FontAwesome5.csproj">
+      <Project>{30c458c0-e963-4972-b9d3-8fb51e434f7c}</Project>
+      <Name>FontAwesome5</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
