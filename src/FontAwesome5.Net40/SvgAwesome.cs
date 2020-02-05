@@ -185,14 +185,13 @@ namespace FontAwesome5
 
             if (svgAwesome == null) return;
 
-            if (svgAwesome.Icon == EFontAwesomeIcon.None)
+            if ((EFontAwesomeIcon)e.NewValue == EFontAwesomeIcon.None)
             {
-                svgAwesome.Visibility = Visibility.Collapsed;
+                svgAwesome.Child = null;
             }
             else
-            {
-                svgAwesome.Visibility = Visibility.Visible;
-                svgAwesome.Child = CreatePath(svgAwesome.Icon, svgAwesome.Foreground);
+            {                
+                svgAwesome.Child = CreatePath((EFontAwesomeIcon)e.NewValue, svgAwesome.Foreground);
             }            
         }
 
