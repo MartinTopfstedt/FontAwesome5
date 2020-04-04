@@ -12,6 +12,18 @@ namespace FontAwesome5.Extensions
         /// <summary>
         /// Get the Font Awesome Style of an icon
         /// </summary>
+        public static string GetLabel(this EFontAwesomeIcon icon)
+        {
+            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
+            if (info == null)
+                return null;
+
+            return info.Label;
+        }
+
+        /// <summary>
+        /// Get the Font Awesome Style of an icon
+        /// </summary>
         public static EFontAwesomeStyle GetStyle(this EFontAwesomeIcon icon)
         {
             var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
