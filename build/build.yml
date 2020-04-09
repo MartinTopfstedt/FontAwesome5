@@ -95,16 +95,7 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersionV2'
     includeSymbols: true
-
-- task: NuGetCommand@2
-  displayName: 'NuGet push'
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: 'cc1ed4db-2a6d-481d-a86c-96549d907768'
-    allowPackageConflicts: true
-
+    
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: FontAwesome5'
   inputs:
