@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Awesome.cs" />
     <Compile Include="Converters\StyleConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Converters\LabelConverter.cs" />
     <Compile Include="Converters\ImageSourceConverter.cs" />
