@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <AssemblyName>FontAwesome5.NetCore30</AssemblyName>
+    <AssemblyName>FontAwesome5.NetCore</AssemblyName>
     <RootNamespace>FontAwesome5</RootNamespace>
   </PropertyGroup>
 
