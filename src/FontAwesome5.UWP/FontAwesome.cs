@@ -7,7 +7,7 @@ namespace FontAwesome5
     /// <summary>
     /// Represents ann icon that uses the FontAwesome font
     /// </summary>
-    public class FontAwesome : FontIcon, ISpinable, IFlippable, IRotatable
+    public class FontAwesome : FontIcon, ISpinable, IFlippable, IRotatable, IPulsable
     {
         static FontAwesome()
         {
@@ -31,6 +31,18 @@ namespace FontAwesome5
         /// </summary>
         public static readonly DependencyProperty SpinDurationProperty = DependencyProperty.Register(
             nameof(SpinDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, SpinDurationChanged));
+
+        /// <summary>
+        /// Identifies the FontAwesome.Pulse dependency property
+        /// </summary>
+        public static readonly DependencyProperty PulseProperty = DependencyProperty.Register(
+            nameof(Pulse), typeof(bool), typeof(FontAwesome), new PropertyMetadata(false, OnPulsePropertyChanged));
+
+        /// <summary>
+        /// Identifies the FontAwesome.PulseDuartion dependency property
+        /// </summary>
+        public static readonly DependencyProperty PulseDurationProperty = DependencyProperty.Register(
+            nameof(PulseDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, PulseDurationChanged));
 
         /// <summary>
         /// Identifies the FontAwesome.Rotation dependency property.
@@ -104,6 +116,47 @@ namespace FontAwesome5
 
             fontAwesome.StopSpin();
             fontAwesome.BeginSpin();
+        }
+
+        /// <summary>
+        /// Gets or sets the state of the pulse animation
+        /// </summary>
+        public bool Pulse
+        {
+            get => (bool)GetValue(PulseProperty);
+            set => SetValue(PulseProperty, value);
+        }
+
+        private static void OnPulsePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var fontAwesome = d as FontAwesome;
+
+            if (fontAwesome == null) return;
+            if ((bool)e.NewValue)
+            {
+                fontAwesome.BeginPulse();
+            }
+            else
+            {
+                fontAwesome.StopPulse();
+                fontAwesome.SetRotation();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the duration of the pulse animation
+        /// </summary>
+        public double PulseDuration
+        {
+            get => (double)GetValue(PulseDurationProperty);
+            set => SetValue(PulseDurationProperty, value);
+        }
+
+        private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            fontAwesome.StopPulse();
+            fontAwesome.BeginPulse();
         }
         
         /// <summary>
