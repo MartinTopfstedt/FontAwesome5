@@ -1,6 +1,9 @@
 ﻿using FontAwesome5.Extensions;
+#if WINDOWS_UWP
+using Windows.UI.Xaml.Media;
+#else
 using System.Windows.Media;
-
+#endif
 namespace FontAwesome5.Extensions
 {
     /// <summary>
@@ -8,6 +11,7 @@ namespace FontAwesome5.Extensions
     /// </summary>
     public static class EFontAwesomeIconExtensions
     {
+#if !WINDOWS_UWP
         /// <summary>
         /// Get the Typeface of an icon
         /// </summary>
@@ -26,7 +30,7 @@ namespace FontAwesome5.Extensions
                 _ => null,
             };
         }
-
+#endif
         /// <summary>
         /// Get the FontFamily of an icon
         /// </summary>
@@ -36,14 +40,14 @@ namespace FontAwesome5.Extensions
             if (info == null)
                 return Fonts.RegularFontFamily;
 
-            return info.Style switch
+            switch (info.Style)
             {
-                EFontAwesomeStyle.Regular => Fonts.RegularFontFamily,
-                EFontAwesomeStyle.Solid => Fonts.SolidFontFamily,
-                EFontAwesomeStyle.Brands => Fonts.BrandsFontFamily,
+                case EFontAwesomeStyle.Regular: return Fonts.RegularFontFamily;
+                case EFontAwesomeStyle.Solid: return Fonts.SolidFontFamily;
+                case EFontAwesomeStyle.Brands: return Fonts.BrandsFontFamily;
+            }
 
-                _ => null,
-            };
+            return null;
         }
     }
 }

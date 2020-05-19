@@ -65,19 +65,11 @@ steps:
     workingDirectory: '.'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build: Net Core 3.0'
+  displayName: 'Build: Net Core'
   inputs:
     command: 'build'
-    projects: 'src/FontAwesome5.NetCore30.sln'
+    projects: 'src/FontAwesome5.Net.sln'
     arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
-
-- task: VSBuild@1
-  displayName: 'Build: Net 4.0'
-  inputs:
-    solution: 'src/FontAwesome5.Net40.sln'
-    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
 
 - task: VSBuild@1
   displayName: 'Build: UWP'

@@ -15,7 +15,7 @@
   
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../FontAwesome5.NET40/Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>../FontAwesome5.NET/Key.snk</AssemblyOriginatorKeyFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright © Codinion 2018</Copyright>
   </PropertyGroup>
