@@ -122,13 +122,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ControlExtensions.cs" />
-    <Compile Include="Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="FontAwesome.cs" />
     <Compile Include="Fonts.cs" />
-    <Compile Include="IFlippable.cs" />
-    <Compile Include="IRotatable.cs" />
-    <Compile Include="ISpinable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\FontAwesome5.UWP.rd.xml" />
   </ItemGroup>
@@ -165,6 +160,7 @@
   <ItemGroup>
     <None Include="Key.snk" />
   </ItemGroup>
+  <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

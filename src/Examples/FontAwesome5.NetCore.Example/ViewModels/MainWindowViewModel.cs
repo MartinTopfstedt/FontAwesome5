@@ -13,7 +13,8 @@ namespace FontAwesome5.NetCore30.Example.ViewModels
     {
         public MainWindowViewModel()
         {
-            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>().ToList();
+            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
+                        .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetLabel()).ToList();
             AllIcons.Remove(EFontAwesomeIcon.None);
             SelectedIcon = AllIcons.First();
 

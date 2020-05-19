@@ -1,17 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net40;net462;net472;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <AssemblyName>FontAwesome5.NetCore</AssemblyName>
+    <AssemblyName>FontAwesome5.Net</AssemblyName>
     <RootNamespace>FontAwesome5</RootNamespace>
+     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>$(OutDir)\FontAwesome5.NetCore30.xml</DocumentationFile>
+    <DocumentationFile>$(OutDir)\FontAwesome5.Net.xml</DocumentationFile>
     <Authors>Martin Topfstedt</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright © Codinion 2018</Copyright>
@@ -31,5 +32,7 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
   </ItemGroup>
+
+  <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
 
 </Project>

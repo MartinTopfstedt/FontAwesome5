@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
+#if WINDOWS_UWP
+using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
+#else
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+#endif
 
 namespace FontAwesome5.Extensions
 {
@@ -36,7 +43,7 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new RotateTransform(0.0));
+                transformGroup.Children.Add(new RotateTransform() { Angle = 0.0 });
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }
@@ -54,10 +61,13 @@ namespace FontAwesome5.Extensions
             storyboard.Children.Add(animation);
 
             Storyboard.SetTarget(animation, control);
+#if WINDOWS_UWP
+            Storyboard.SetTargetProperty(animation, "(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)");
+#else
             Storyboard.SetTargetProperty(animation,
                 new PropertyPath("(0).(1)[0].(2)", UIElement.RenderTransformProperty,
                     TransformGroup.ChildrenProperty, RotateTransform.AngleProperty));
-
+#endif
             storyboard.Begin();
             control.Resources.Add(SpinnerStoryBoardName, storyboard);
         }
@@ -97,7 +107,7 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new RotateTransform(control.Rotation));
+                transformGroup.Children.Add(new RotateTransform() { Angle = control.Rotation });
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }
@@ -125,7 +135,7 @@ namespace FontAwesome5.Extensions
             }
             else
             {
-                transformGroup.Children.Add(new ScaleTransform(scaleX, scaleY));
+                transformGroup.Children.Add(new ScaleTransform() { ScaleX = scaleX, ScaleY = scaleY });
                 control.RenderTransform = transformGroup;
                 control.RenderTransformOrigin = new Point(0.5, 0.5);
             }

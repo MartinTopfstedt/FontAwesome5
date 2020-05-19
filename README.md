@@ -2,11 +2,11 @@
 
 [![Build Status](https://dev.azure.com/codinion/FontAwesome5/_apis/build/status/MartinTopfstedt.FontAwesome5?branchName=master)](https://dev.azure.com/codinion/FontAwesome5/_build/latest?definitionId=11&branchName=master)
 
-WPF (.Net and .Net Core 3.0) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+WPF (.Net and .Net Core) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
 
 Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
-+ Current Version: v5.12.0
++ Current Version: v5.13.0
 
 # Getting Started
 

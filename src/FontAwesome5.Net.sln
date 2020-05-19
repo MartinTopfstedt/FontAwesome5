@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5DB18EB6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome5.Generator", "Tools\FontAwesome5.Generator\FontAwesome5.Generator.csproj", "{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome5.NetCore", "FontAwesome5.NetCore\FontAwesome5.NetCore.csproj", "{85C676A7-A8F1-48D1-A925-5D42C04950B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome5.Net", "FontAwesome5.Net\FontAwesome5.Net.csproj", "{E3B67831-928E-4B93-8249-3BAB7E52AE3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,22 +64,22 @@ Global
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x64.Build.0 = Release|Any CPU
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x86.ActiveCfg = Release|Any CPU
 		{36BAF672-62DD-46A9-B6E6-1F3B0AA0D84B}.Release|x86.Build.0 = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|ARM.Build.0 = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|x64.Build.0 = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Debug|x86.Build.0 = Debug|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|ARM.ActiveCfg = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|ARM.Build.0 = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|x64.ActiveCfg = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|x64.Build.0 = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|x86.ActiveCfg = Release|Any CPU
-		{85C676A7-A8F1-48D1-A925-5D42C04950B0}.Release|x86.Build.0 = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|x64.Build.0 = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Debug|x86.Build.0 = Debug|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|ARM.Build.0 = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|x64.ActiveCfg = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|x64.Build.0 = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|x86.ActiveCfg = Release|Any CPU
+		{E3B67831-928E-4B93-8249-3BAB7E52AE3F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

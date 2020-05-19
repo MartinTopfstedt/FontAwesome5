@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using FontAwesome5.Extensions;
 using FontAwesome5.UWP;
 
 namespace FontAwesome5.UWP.Example.ViewModels
@@ -11,7 +12,9 @@ namespace FontAwesome5.UWP.Example.ViewModels
     {
         public MainViewModel()
         {
-            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>().ToList();
+            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
+                        .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetLabel()).ToList();
+
             AllIcons.Remove(EFontAwesomeIcon.None);
             SelectedIcon = AllIcons.First();
 
