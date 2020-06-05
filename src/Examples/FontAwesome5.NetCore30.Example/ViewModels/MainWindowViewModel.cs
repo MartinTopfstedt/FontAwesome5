@@ -20,6 +20,8 @@ namespace FontAwesome5.NetCore30.Example.ViewModels
 
             FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
             SpinDuration = 5;
+            PulseDuration = 5;
+
             FontSize = 30;
             Rotation = 0;
 
@@ -32,6 +34,8 @@ namespace FontAwesome5.NetCore30.Example.ViewModels
 
         public bool SpinIsEnabled { get; set; }
         public double SpinDuration { get; set; }
+        public bool PulseIsEnabled { get; set; }
+        public double PulseDuration { get; set; }
         public EFlipOrientation FlipOrientation { get; set; }
         public double FontSize { get; set; }
         public double Rotation { get; set; }
