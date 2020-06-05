@@ -20,6 +20,7 @@ namespace FontAwesome5.UWP.Example.ViewModels
 
             FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
             SpinDuration = 5;
+            PulseDuration = 5;
             FontSize = 30;
             Rotation = 0;
         }
@@ -56,6 +57,30 @@ namespace FontAwesome5.UWP.Example.ViewModels
             {
                 _spinDuration = value;
                 RaisePropertyChanged(nameof(SpinDuration));
+                RaisePropertyChanged(nameof(FontText));
+            }
+        }
+
+        private bool _pulseIsEnabled;
+        public bool PulseIsEnabled
+        {
+            get => _pulseIsEnabled;
+            set
+            {
+                _pulseIsEnabled = value;
+                RaisePropertyChanged(nameof(PulseIsEnabled));
+                RaisePropertyChanged(nameof(FontText));
+            }
+        }
+
+        private double _pulseDuration;
+        public double PulseDuration
+        {
+            get => _pulseDuration;
+            set
+            {
+                _pulseDuration = value;
+                RaisePropertyChanged(nameof(PulseDuration));
                 RaisePropertyChanged(nameof(FontText));
             }
         }
@@ -100,7 +125,7 @@ namespace FontAwesome5.UWP.Example.ViewModels
         public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
 
         public string FontText => $"<fa5:FontAwesome Icon=\"{SelectedIcon}\" Fontsize=\"{FontSize}\" Spin=\"{SpinIsEnabled}\" " + 
-                                  $"SpinDuration=\"{SpinDuration}\" FlipOrientation=\"{FlipOrientation}\" Rotation=\"{Rotation}\" >";
+                                  $"SpinDuration=\"{SpinDuration}\" Pulse=\"{PulseIsEnabled}\" PulseDuration=\"{PulseDuration}\" FlipOrientation=\"{FlipOrientation}\" Rotation=\"{Rotation}\" >";
 
         public void RaisePropertyChanged(string propertyName)
         {
