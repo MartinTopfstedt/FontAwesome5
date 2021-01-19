@@ -82,7 +82,8 @@ namespace FontAwesome5.Generator
             public string[] viewBox { get; set; }
             public int width { get; set; }
             public int height { get; set; }
-            public string path { get; set; }
+            [JsonConverter(typeof(StringToArrayConverter))]
+            public string[] path { get; set; }
         }
     }
 }
