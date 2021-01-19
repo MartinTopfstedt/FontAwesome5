@@ -277,7 +277,7 @@ namespace FontAwesome5
             if (icon.GetSvg(out var strPath, out var width, out var height))
             {
                 path = new Path();
-                path.Data = Geometry.Parse(strPath);
+                path.Data = Geometry.Parse(strPath.First());
                 path.Width = width;
                 path.Height = height;
                 path.Fill = foregroundBrush;
