@@ -36,9 +36,9 @@ namespace FontAwesome5.Extensions
         /// <summary>
         /// Get the SVG path of an icon
         /// </summary>
-        public static bool GetSvg(this EFontAwesomeIcon icon, out string path, out int width, out int height)
+        public static bool GetSvg(this EFontAwesomeIcon icon, out string[] path, out int width, out int height)
         {
-            path = string.Empty;
+            path = null;
             width = -1;
             height = -1;
 
