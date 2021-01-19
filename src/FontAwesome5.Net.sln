@@ -22,6 +22,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome5.Net", "FontAwesome5.Net\FontAwesome5.Net.csproj", "{E3B67831-928E-4B93-8249-3BAB7E52AE3F}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FontAwesome.Shared\FontAwesome.Shared.projitems*{e3b67831-928e-4b93-8249-3bab7e52ae3f}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

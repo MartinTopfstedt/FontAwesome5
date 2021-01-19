@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -78,7 +79,14 @@ namespace FontAwesome5.Generator
 
                     if (kvp.Value.svg.TryGetValue(style.ToString().ToLower(), out var svgInfo))
                     {
-                        WriteLine("[FontAwesomeSvgInformation(\"{0}\", {1}, {2})]", svgInfo.path, svgInfo.width, svgInfo.height);
+                        string path = string.Empty;
+                        if (svgInfo.path.Length == 1)
+                            path = $"\"{svgInfo.path[0]}\"";
+                        else
+                            path = svgInfo.path
+                                .Aggregate((current, next) => $"\"{current}\",\"{next}\"");
+                        path = "new[] {" + path + "}";
+                        WriteLine("[FontAwesomeSvgInformation({0}, {1}, {2})]", path, svgInfo.width, svgInfo.height);
                     }
                     WriteLine("{0}_{1},", style, fa.Convert(kvp.Key));
                     WriteLine("");
@@ -116,13 +124,13 @@ namespace FontAwesome5.Generator
             WriteLine("{");
             PushIndent("\t");
             WriteSummary("FontAwesome SVG Path");
-            WriteLine("public string Path { get; set; }");
+            WriteLine("public string[] Path { get; set; }");
             WriteSummary("FontAwesome SVG Width");
             WriteLine("public int Width { get; set; }");
             WriteSummary("FontAwesome SVG Height");
             WriteLine("public int Height { get; set; }");
             WriteLine("");
-            WriteLine("public FontAwesomeSvgInformationAttribute(string path, int width, int height)");
+            WriteLine("public FontAwesomeSvgInformationAttribute(string[] path, int width, int height)");
             WriteLine("{");
             WriteLine("    Path = path;");
             WriteLine("    Width = width;");
