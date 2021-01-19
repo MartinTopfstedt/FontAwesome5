@@ -14,7 +14,8 @@ namespace FontAwesome5.Generator
     {
         Solid,
         Regular,
-        Brands
+        Brands,
+        DuoTone
     }
 
     public class FontAwesomeManager
