@@ -140,7 +140,7 @@ namespace FontAwesome5.Generator
         static void WriteSummary(string text)
         {
             WriteLine("/// <summary>");
-            WriteLine("/// {0}", text);
+            WriteLine("/// {0}", text.Replace("&", "&amp;"));
             WriteLine("/// </summary>");
         }
 
