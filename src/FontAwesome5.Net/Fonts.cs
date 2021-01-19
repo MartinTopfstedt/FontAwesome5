@@ -16,15 +16,15 @@ namespace FontAwesome5
         /// <summary>
         /// FontAwesome5 Regular FontFamily
         /// </summary>
-        public static readonly FontFamily RegularFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.NetCore30;component/"), "./Fonts/#Font Awesome 5 Free Regular");
+        public static readonly FontFamily RegularFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Regular");
         /// <summary>
         /// FontAwesome5 Solid FontFamily
         /// </summary>
-        public static readonly FontFamily SolidFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.NetCore30;component/"), "./Fonts/#Font Awesome 5 Free Solid");
+        public static readonly FontFamily SolidFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Solid");
         /// <summary>
         /// FontAwesome5 Brands FontFamily
         /// </summary>
-        public static readonly FontFamily BrandsFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.NetCore30;component/"), "./Fonts/#Font Awesome 5 Brands Regular");
+        public static readonly FontFamily BrandsFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Brands Regular");
 
         /// <summary>
         /// FontAwesome5 Regular Typeface

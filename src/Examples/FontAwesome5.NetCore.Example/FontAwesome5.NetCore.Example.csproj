@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\FontAwesome5.Net\FontAwesome5.Net.csproj" />
     <ProjectReference Include="..\..\FontAwesome5\FontAwesome5.csproj" />
   </ItemGroup>
 

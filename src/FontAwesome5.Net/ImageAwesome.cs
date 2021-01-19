@@ -197,6 +197,11 @@ namespace FontAwesome5
         /// <returns>A new System.Windows.Media.ImageSource</returns>
         public static ImageSource CreateImageSource(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
         {
+            return new DrawingImage(CreateDrawing(icon, foregroundBrush, emSize));
+        }
+
+        public static Drawing CreateDrawing(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
+        {
             var visual = new DrawingVisual();
             using (var drawingContext = visual.RenderOpen())
             {
@@ -205,7 +210,7 @@ namespace FontAwesome5
                         icon.GetTypeFace(), emSize, foregroundBrush)
                     { TextAlignment = TextAlignment.Center }, new Point(0, 0));
             }
-            return new DrawingImage(visual.Drawing);
+            return visual.Drawing;
         }
 
     }

@@ -6,12 +6,17 @@
         xmlns:local="clr-namespace:FontAwesome5.NetCore30.Example"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="FontAwesome5.NetCore30.Example" Height="632" Width="883">
+        Title="FontAwesome5.NetCore.Example" Height="632" Width="883">
     <Window.Resources>
         <fa5:LabelConverter x:Key="LabelConverter"/>
         <fa5:StyleConverter x:Key="StyleConverter"/>
         <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        <fa5:DrawingConverter x:Key="DrawingConverter"/>
     </Window.Resources>
+    <Window.Icon>
+        <DrawingImage Drawing="{Binding SelectedIcon, Converter={StaticResource DrawingConverter}}">
+        </DrawingImage>
+    </Window.Icon>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
