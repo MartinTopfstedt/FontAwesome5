@@ -21,8 +21,12 @@
 
   <ItemGroup>
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Duotone-Solid-900.otf" Link="Fonts\Font Awesome 5 Duotone-Solid-900.otf" />
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Regular-400.otf" Link="Fonts\Font Awesome 5 Free-Regular-400.otf" />
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf" Link="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Light-300.otf" Link="Fonts\Font Awesome 5 Pro-Light-300.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Regular-400.otf" Link="Fonts\Font Awesome 5 Pro-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Solid-900.otf" Link="Fonts\Font Awesome 5 Pro-Solid-900.otf" />
   </ItemGroup>
 
   <ItemGroup>
