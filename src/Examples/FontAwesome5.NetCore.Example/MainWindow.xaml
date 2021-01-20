@@ -40,6 +40,12 @@
                 <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
             </StackPanel>
             <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Pulse:" VerticalAlignment="Center"/>
+                <CheckBox IsChecked="{Binding PulseIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <Slider Minimum="0" Maximum="10" Value="{Binding PulseDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
+                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
                 <TextBlock Text="Rotation:" VerticalAlignment="Center"/>
                 <Slider Minimum="0" Maximum="360" Value="{Binding Rotation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
                 <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
@@ -92,13 +98,13 @@
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}, ConverterParameter='{}{0} ({1})'}"/>
             </Grid>
 
-            <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+            <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
             <TextBlock Text="{Binding SVGText}" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+            <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
             <TextBlock Text="{Binding ImageText}" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
             <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
 
             <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>

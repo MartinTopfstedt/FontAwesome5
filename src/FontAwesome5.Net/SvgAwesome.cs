@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome5.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,11 +8,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using FontAwesome5.Extensions;
 
 namespace FontAwesome5
 {
-    public class SvgAwesome : Viewbox, ISpinable, IRotatable, IFlippable
+    public class SvgAwesome : Viewbox, ISpinable, IRotatable, IFlippable, IPulsable
     {
         /// <summary>
         /// Identifies the FontAwesome.WPF.SvgAwesome.Foreground dependency property.
@@ -33,6 +33,16 @@ namespace FontAwesome5
         /// </summary>
         public static readonly DependencyProperty SpinDurationProperty =
             DependencyProperty.Register("SpinDuration", typeof(double), typeof(SvgAwesome), new PropertyMetadata(1d, SpinDurationChanged, SpinDurationCoerceValue));
+        /// <summary>
+        /// Identifies the FontAwesome.WPF.FontAwesome.Pulse dependency property.
+        /// </summary>
+        public static readonly DependencyProperty PulseProperty =
+            DependencyProperty.Register("Pulse", typeof(bool), typeof(SvgAwesome), new PropertyMetadata(false, OnPulsePropertyChanged, PulseCoerceValue));
+        /// <summary>
+        /// Identifies the FontAwesome.WPF.FontAwesome.PulseDuration dependency property.
+        /// </summary>
+        public static readonly DependencyProperty PulseDurationProperty =
+            DependencyProperty.Register("PulseDuration", typeof(double), typeof(SvgAwesome), new PropertyMetadata(1d, PulseDurationChanged, PulseDurationCoerceValue));
         /// <summary>
         /// Identifies the FontAwesome.WPF.SvgAwesome.Rotation dependency property.
         /// </summary>
@@ -127,6 +137,65 @@ namespace FontAwesome5
         }
 
         private static object SpinDurationCoerceValue(DependencyObject d, object value)
+        {
+            double val = (double)value;
+            return val < 0 ? 0d : value;
+        }
+
+        /// <summary>
+        /// Gets or sets the current pulse animation of the icon.
+        /// </summary>
+        public bool Pulse
+        {
+            get { return (bool)GetValue(PulseProperty); }
+            set { SetValue(PulseProperty, value); }
+        }
+
+        private static void OnPulsePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var fontAwesome = d as SvgAwesome;
+
+            if (fontAwesome == null) return;
+
+            if ((bool)e.NewValue)
+                fontAwesome.BeginPulse();
+            else
+            {
+                fontAwesome.StopPulse();
+                fontAwesome.SetRotation();
+            }
+        }
+
+        private static object PulseCoerceValue(DependencyObject d, object basevalue)
+        {
+            var fontAwesome = (SvgAwesome)d;
+
+            if (!fontAwesome.IsVisible || fontAwesome.Opacity == 0.0 || fontAwesome.PulseDuration == 0.0)
+                return false;
+
+            return basevalue;
+        }
+
+        /// <summary>
+        /// Gets or sets the duration of the pulse animation (in seconds). This will stop and start the pulse animation.
+        /// </summary>
+        public double PulseDuration
+        {
+            get { return (double)GetValue(PulseDurationProperty); }
+            set { SetValue(PulseDurationProperty, value); }
+        }
+
+        private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var fontAwesome = d as SvgAwesome;
+
+            if (null == fontAwesome || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+
+            fontAwesome.StopPulse();
+            fontAwesome.BeginPulse();
+        }
+
+        private static object PulseDurationCoerceValue(DependencyObject d, object value)
         {
             double val = (double)value;
             return val < 0 ? 0d : value;

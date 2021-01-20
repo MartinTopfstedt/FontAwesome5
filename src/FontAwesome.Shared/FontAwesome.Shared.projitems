@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFlippable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPulsable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IRotatable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ISpinable.cs" />
   </ItemGroup>

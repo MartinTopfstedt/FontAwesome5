@@ -30,6 +30,11 @@
                 <Slider Minimum="0" Maximum="10" Value="{Binding SpinDuration, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="150"  Margin="5,0,0,0"/>
             </StackPanel>
             <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                <TextBlock Text="Pulse:" VerticalAlignment="Center"/>
+                <CheckBox IsChecked="{Binding PulseIsEnabled, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="20" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <Slider Minimum="0" Maximum="10" Value="{Binding PulseDuration, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="150"  Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
                 <TextBlock Text="Rotation:" VerticalAlignment="Center"/>
                 <Slider Minimum="0" Maximum="360" Value="{Binding Rotation, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
             </StackPanel>
@@ -72,7 +77,7 @@
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon}"/>
             </Grid>
 
-            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
+            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Margin="10"/>
             <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
 
         </StackPanel>
