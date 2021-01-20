@@ -88,9 +88,7 @@ namespace FontAwesome5
 
         private static void OnSpinPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var svgAwesome = d as SvgAwesome;
-
-            if (svgAwesome == null) return;
+            if (d is not SvgAwesome svgAwesome) return;
 
             if ((bool)e.NewValue)
                 svgAwesome.BeginSpin();
@@ -122,9 +120,7 @@ namespace FontAwesome5
 
         private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var svgAwesome = d as SvgAwesome;
-
-            if (null == svgAwesome || !svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || !svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
 
             svgAwesome.StopSpin();
             svgAwesome.BeginSpin();
@@ -148,9 +144,7 @@ namespace FontAwesome5
 
         private static void RotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var svgAwesome = d as SvgAwesome;
-
-            if (null == svgAwesome || svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
 
             svgAwesome.SetRotation();
         }
@@ -172,9 +166,7 @@ namespace FontAwesome5
 
         private static void FlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var svgAwesome = d as SvgAwesome;
-
-            if (null == svgAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue)) return;
 
             svgAwesome.SetFlipOrientation();
         }

@@ -24,7 +24,7 @@ namespace FontAwesome5.Converters
             if (!(value is EFontAwesomeIcon)) return null;
 
 
-            if (!(parameter is Brush brush))
+            if (parameter is not Brush brush)
                 brush = Brushes.Black;
 
             return ImageAwesome.CreateImageSource((EFontAwesomeIcon)value, brush);
