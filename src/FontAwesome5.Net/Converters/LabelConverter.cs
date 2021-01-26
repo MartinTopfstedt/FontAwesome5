@@ -19,9 +19,11 @@ namespace FontAwesome5.Converters
                 return null;
 
             var icon = (EFontAwesomeIcon)value;
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
+            var info = icon.GetInformation();
             if (info == null)
-                return null; 
+            {
+                return null;
+            }
 
             if (parameter is string format && !string.IsNullOrEmpty(format))
             {

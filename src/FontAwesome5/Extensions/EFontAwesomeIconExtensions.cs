@@ -10,15 +10,19 @@ namespace FontAwesome5.Extensions
     public static class EFontAwesomeIconExtensions
     {
         /// <summary>
+        /// Get the Font Awesome information of an icon
+        /// </summary>
+        public static FontAwesomeInformation GetInformation(this EFontAwesomeIcon icon)
+        {
+            return FontAwesome.Information.TryGetValue(icon, out var info) ? info : null;
+        }
+
+        /// <summary>
         /// Get the Font Awesome label of an icon
         /// </summary>
         public static string GetLabel(this EFontAwesomeIcon icon)
         {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return null;
-
-            return info.Label;
+            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Label : null;
         }
 
         /// <summary>
@@ -26,11 +30,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static EFontAwesomeStyle GetStyle(this EFontAwesomeIcon icon)
         {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return EFontAwesomeStyle.None;
-
-            return info.Style;
+            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Style : EFontAwesomeStyle.None;
         }
 
         /// <summary>
@@ -41,17 +41,15 @@ namespace FontAwesome5.Extensions
             path = string.Empty;
             width = -1;
             height = -1;
+            if (FontAwesome.Information.TryGetValue(icon, out var info) && info.Svg != null)
+            {
+                path = info.Svg.Path;
+                width = info.Svg.Width;
+                height = info.Svg.Height;
+                return true;
+            }
 
-
-            var svgInfo = icon.GetInformationAttribute<FontAwesomeSvgInformationAttribute>();
-            if (svgInfo == null)
-                return false;
-            
-            path = svgInfo.Path;
-            width = svgInfo.Width;
-            height = svgInfo.Height;
-
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -59,29 +57,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static string GetUnicode(this EFontAwesomeIcon icon)
         {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return char.ConvertFromUtf32(0);
-
-            return char.ConvertFromUtf32(info.Unicode);
-        }
-        
-        public static T GetInformationAttribute<T>(this EFontAwesomeIcon icon) where T : class
-        {
-            if (icon == EFontAwesomeIcon.None)
-                return null;
-
-            var memInfo = typeof(EFontAwesomeIcon).GetMember(icon.ToString());
-            if (memInfo.Length == 0)
-                throw new Exception("EFontAwesomeIcon not found.");
-
-            var attributes = memInfo[0].GetCustomAttributes(typeof(T), false)
-                .ToList();
-
-            if (!attributes.Any())
-                throw new Exception("FontAwesomeInformationAttribute not found.");
-
-            return attributes[0] as T;
-        }
+            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Unicode : char.ConvertFromUtf32(0);
+        }        
     }
 }
