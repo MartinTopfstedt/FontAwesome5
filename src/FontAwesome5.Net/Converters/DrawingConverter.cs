@@ -18,11 +18,15 @@ namespace FontAwesome5.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is EFontAwesomeIcon)) return null;
-
+            if (value is not EFontAwesomeIcon)
+            {
+                return null;
+            }
 
             if (parameter is not Brush brush)
+            {
                 brush = Brushes.Black;
+            }
 
             return ImageAwesome.CreateDrawing((EFontAwesomeIcon)value, brush);
         }

@@ -136,6 +136,7 @@ namespace FontAwesome5.Generator
             PopIndent();
             WriteLine("};");
 
+            WriteLine("");
             WriteLine("public class FontAwesomeInformation");
             WriteLine("{");
             PushIndent("\t");
@@ -157,7 +158,7 @@ namespace FontAwesome5.Generator
             WriteLine("}");
             PopIndent();
             WriteLine("}");
-
+            WriteLine("");
             WriteLine("public class FontAwesomeSvgInformation");
             WriteLine("{");
             PushIndent("\t");
@@ -217,9 +218,11 @@ namespace FontAwesome5.Generator
 
         static string GetIndent()
         {
-            string indent = "";
+            var indent = "";
             foreach (var entry in _indent)
+            {
                 indent += entry;
+            }
 
             return indent;
         }

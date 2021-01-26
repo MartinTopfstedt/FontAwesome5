@@ -98,12 +98,15 @@ namespace FontAwesome5
 
         private static void OnSpinPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var imageAwesome = d as ImageAwesome;
-
-            if (imageAwesome == null) return;
+            if (d is not ImageAwesome imageAwesome)
+            {
+                return;
+            }
 
             if ((bool)e.NewValue)
+            {
                 imageAwesome.BeginSpin();
+            }
             else
             {
                 imageAwesome.StopSpin();
@@ -115,10 +118,7 @@ namespace FontAwesome5
         {
             var imageAwesome = (ImageAwesome)d;
 
-            if (!imageAwesome.IsVisible || imageAwesome.Opacity == 0.0 || imageAwesome.SpinDuration == 0.0)
-                return false;
-
-            return basevalue;
+            return !imageAwesome.IsVisible || imageAwesome.Opacity == 0.0 || imageAwesome.SpinDuration == 0.0 ? false : basevalue;
         }
 
         /// <summary>
@@ -132,9 +132,10 @@ namespace FontAwesome5
 
         private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var imageAwesome = d as ImageAwesome;
-
-            if (null == imageAwesome || !imageAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not ImageAwesome imageAwesome || !imageAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             imageAwesome.StopSpin();
             imageAwesome.BeginSpin();
@@ -142,7 +143,7 @@ namespace FontAwesome5
 
         private static object SpinDurationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : value;
         }
 
@@ -157,12 +158,15 @@ namespace FontAwesome5
 
         private static void OnPulsePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as ImageAwesome;
-
-            if (fontAwesome == null) return;
+            if (d is not ImageAwesome fontAwesome)
+            {
+                return;
+            }
 
             if ((bool)e.NewValue)
+            {
                 fontAwesome.BeginPulse();
+            }
             else
             {
                 fontAwesome.StopPulse();
@@ -174,10 +178,7 @@ namespace FontAwesome5
         {
             var fontAwesome = (ImageAwesome)d;
 
-            if (!fontAwesome.IsVisible || fontAwesome.Opacity == 0.0 || fontAwesome.PulseDuration == 0.0)
-                return false;
-
-            return basevalue;
+            return !fontAwesome.IsVisible || fontAwesome.Opacity == 0.0 || fontAwesome.PulseDuration == 0.0 ? false : basevalue;
         }
 
         /// <summary>
@@ -191,9 +192,10 @@ namespace FontAwesome5
 
         private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as ImageAwesome;
-
-            if (null == fontAwesome || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not ImageAwesome fontAwesome || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             fontAwesome.StopPulse();
             fontAwesome.BeginPulse();
@@ -201,7 +203,7 @@ namespace FontAwesome5
 
         private static object PulseDurationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : value;
         }
 
@@ -217,16 +219,17 @@ namespace FontAwesome5
 
         private static void RotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var imageAwesome = d as ImageAwesome;
-
-            if (null == imageAwesome || imageAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not ImageAwesome imageAwesome || imageAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             imageAwesome.SetRotation();
         }
 
         private static object RotationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : (val > 360 ? 360d : value);
         }
 
@@ -241,18 +244,20 @@ namespace FontAwesome5
 
         private static void FlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var imageAwesome = d as ImageAwesome;
-
-            if (null == imageAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not ImageAwesome imageAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             imageAwesome.SetFlipOrientation();
         }
 
         private static void OnIconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var imageAwesome = d as ImageAwesome;
-
-            if (imageAwesome == null) return;
+            if (d is not ImageAwesome imageAwesome)
+            {
+                return;
+            }
 
             imageAwesome.SetValue(SourceProperty, CreateImageSource(imageAwesome.Icon, imageAwesome.Foreground));
         }

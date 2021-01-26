@@ -15,8 +15,10 @@ namespace FontAwesome5.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is EFontAwesomeIcon))
+            if (value is not EFontAwesomeIcon)
+            {
                 return null;
+            }
 
             var icon = (EFontAwesomeIcon)value;
             var info = icon.GetInformation();
@@ -25,12 +27,7 @@ namespace FontAwesome5.Converters
                 return null;
             }
 
-            if (parameter is string format && !string.IsNullOrEmpty(format))
-            {
-                return string.Format(format, info.Label, info.Style);
-            }
-
-            return info.Label;
+            return parameter is string format && !string.IsNullOrEmpty(format) ? string.Format(format, info.Label, info.Style) : info.Label;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -18,17 +18,14 @@ namespace FontAwesome5.Converters
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (!(value is EFontAwesomeIcon))
-                throw new InvalidOperationException("The target must be a EFontAwesomeIcon");
-
-            if ((EFontAwesomeIcon)value == EFontAwesomeIcon.None)
+            if (value is not EFontAwesomeIcon)
             {
-                return parameter ?? Visibility.Collapsed;
+                throw new InvalidOperationException("The target must be a EFontAwesomeIcon");
             }
 
-            return Visibility.Visible;
+            return (EFontAwesomeIcon)value == EFontAwesomeIcon.None ? parameter ?? Visibility.Collapsed : Visibility.Visible;
         }
-        
+
 
         public object ConvertBack(object value, Type targetType, object parameter,
             System.Globalization.CultureInfo culture)

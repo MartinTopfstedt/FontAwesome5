@@ -58,7 +58,9 @@ namespace FontAwesome5.Generator
             }
 
             if (char.IsDigit(stringBuilder[0]))
+            {
                 stringBuilder.Insert(0, '_');
+            }
 
             return stringBuilder.ToString();
         }

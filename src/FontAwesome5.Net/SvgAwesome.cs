@@ -98,10 +98,15 @@ namespace FontAwesome5
 
         private static void OnSpinPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is not SvgAwesome svgAwesome) return;
+            if (d is not SvgAwesome svgAwesome)
+            {
+                return;
+            }
 
             if ((bool)e.NewValue)
+            {
                 svgAwesome.BeginSpin();
+            }
             else
             {
                 svgAwesome.StopSpin();
@@ -113,10 +118,7 @@ namespace FontAwesome5
         {
             var svgAwesome = (SvgAwesome)d;
 
-            if (!svgAwesome.IsVisible || svgAwesome.Opacity == 0.0 || svgAwesome.SpinDuration == 0.0)
-                return false;
-
-            return basevalue;
+            return !svgAwesome.IsVisible || svgAwesome.Opacity == 0.0 || svgAwesome.SpinDuration == 0.0 ? false : basevalue;
         }
 
         /// <summary>
@@ -130,7 +132,10 @@ namespace FontAwesome5
 
         private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is not SvgAwesome svgAwesome || !svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || !svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             svgAwesome.StopSpin();
             svgAwesome.BeginSpin();
@@ -138,7 +143,7 @@ namespace FontAwesome5
 
         private static object SpinDurationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : value;
         }
 
@@ -153,12 +158,15 @@ namespace FontAwesome5
 
         private static void OnPulsePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as SvgAwesome;
-
-            if (fontAwesome == null) return;
+            if (d is not SvgAwesome fontAwesome)
+            {
+                return;
+            }
 
             if ((bool)e.NewValue)
+            {
                 fontAwesome.BeginPulse();
+            }
             else
             {
                 fontAwesome.StopPulse();
@@ -170,10 +178,7 @@ namespace FontAwesome5
         {
             var fontAwesome = (SvgAwesome)d;
 
-            if (!fontAwesome.IsVisible || fontAwesome.Opacity == 0.0 || fontAwesome.PulseDuration == 0.0)
-                return false;
-
-            return basevalue;
+            return !fontAwesome.IsVisible || fontAwesome.Opacity == 0.0 || fontAwesome.PulseDuration == 0.0 ? false : basevalue;
         }
 
         /// <summary>
@@ -187,9 +192,10 @@ namespace FontAwesome5
 
         private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as SvgAwesome;
-
-            if (null == fontAwesome || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome fontAwesome || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             fontAwesome.StopPulse();
             fontAwesome.BeginPulse();
@@ -197,7 +203,7 @@ namespace FontAwesome5
 
         private static object PulseDurationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : value;
         }
 
@@ -213,14 +219,17 @@ namespace FontAwesome5
 
         private static void RotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is not SvgAwesome svgAwesome || svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || svgAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             svgAwesome.SetRotation();
         }
 
         private static object RotationCoerceValue(DependencyObject d, object value)
         {
-            double val = (double)value;
+            var val = (double)value;
             return val < 0 ? 0d : (val > 360 ? 360d : value);
         }
 
@@ -235,16 +244,20 @@ namespace FontAwesome5
 
         private static void FlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is not SvgAwesome svgAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue)) return;
+            if (d is not SvgAwesome svgAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             svgAwesome.SetFlipOrientation();
         }
 
         private static void OnIconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var svgAwesome = d as SvgAwesome;
-
-            if (svgAwesome == null) return;
+            if (d is not SvgAwesome svgAwesome)
+            {
+                return;
+            }
 
             if (svgAwesome.Icon == EFontAwesomeIcon.None)
             {
@@ -268,11 +281,13 @@ namespace FontAwesome5
             Path path = null;
             if (icon.GetSvg(out var strPath, out var width, out var height))
             {
-                path = new Path();
-                path.Data = Geometry.Parse(strPath);
-                path.Width = width;
-                path.Height = height;
-                path.Fill = foregroundBrush;
+                path = new Path
+                {
+                    Data = Geometry.Parse(strPath),
+                    Width = width,
+                    Height = height,
+                    Fill = foregroundBrush
+                };
             }
             return path;          
         }

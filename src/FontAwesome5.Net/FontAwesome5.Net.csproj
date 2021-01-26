@@ -20,6 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Converters\ugwrcn1j.sfn~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Regular-400.otf" Link="Fonts\Font Awesome 5 Free-Regular-400.otf" />
     <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf" Link="Fonts\Font Awesome 5 Free-Solid-900.otf" />

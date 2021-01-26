@@ -15,8 +15,10 @@ namespace FontAwesome5.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is EFontAwesomeIcon))
+            if (value is not EFontAwesomeIcon)
+            {
                 return EFontAwesomeStyle.None;
+            }
 
             var icon = (EFontAwesomeIcon)value;
             return icon.GetStyle();
