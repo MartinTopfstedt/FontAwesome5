@@ -48,14 +48,6 @@
         <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.xml" target="lib\net472\" />
         <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.pdb" target="lib\net472\" />
 
-        <!-- .Net Core Framework 3.0 -->
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.dll" target="lib\netcoreapp3.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.xml" target="lib\netcoreapp3.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.pdb" target="lib\netcoreapp3.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.Net.dll" target="lib\netcoreapp3.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.Net.xml" target="lib\netcoreapp3.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.0\FontAwesome5.Net.pdb" target="lib\netcoreapp3.0\" />
-
         <!-- .Net Core Framework 3.1 -->
         <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.dll" target="lib\netcoreapp3.1\" />
         <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.xml" target="lib\netcoreapp3.1\" />
