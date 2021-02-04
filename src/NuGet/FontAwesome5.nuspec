@@ -56,6 +56,14 @@
         <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.xml" target="lib\netcoreapp3.1\" />
         <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.pdb" target="lib\netcoreapp3.1\" />
 
+        <!-- .Net 5.0 -->
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.dll" target="lib\net5.0-windows\" />
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.xml" target="lib\net5.0-windows\" />
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.pdb" target="lib\net5.0-windows\" />
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.dll" target="lib\net5.0-windows\" />
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.xml" target="lib\net5.0-windows\" />
+        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.pdb" target="lib\net5.0-windows\" />
+
         <!-- UWP -->
         <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
         <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.xml" target="lib\uap10.0" />
