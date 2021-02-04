@@ -259,33 +259,9 @@ namespace FontAwesome5
                 return;
             }
 
-            imageAwesome.SetValue(SourceProperty, CreateImageSource(imageAwesome.Icon, imageAwesome.Foreground));
+            imageAwesome.SetValue(SourceProperty, imageAwesome.Icon.CreateImageSource(imageAwesome.Foreground));
         }
 
-        /// <summary>
-        /// Creates a new System.Windows.Media.ImageSource of a specified FontAwesomeIcon and foreground System.Windows.Media.Brush.
-        /// </summary>
-        /// <param name="icon">The FontAwesome icon to be drawn.</param>
-        /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
-        /// <param name="emSize">The font size in em.</param>
-        /// <returns>A new System.Windows.Media.ImageSource</returns>
-        public static ImageSource CreateImageSource(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
-        {
-            return new DrawingImage(CreateDrawing(icon, foregroundBrush, emSize));
-        }
-
-        public static Drawing CreateDrawing(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
-        {
-            var visual = new DrawingVisual();
-            using (var drawingContext = visual.RenderOpen())
-            {
-                drawingContext.DrawText(
-                    new FormattedText(icon.GetUnicode(), CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
-                        icon.GetTypeFace(), emSize, foregroundBrush)
-                    { TextAlignment = TextAlignment.Center }, new Point(0, 0));
-            }
-            return visual.Drawing;
-        }
 
     }
 }

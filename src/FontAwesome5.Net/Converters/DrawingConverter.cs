@@ -7,6 +7,8 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 
+using FontAwesome5.Extensions;
+
 namespace FontAwesome5.Converters
 {
     public class DrawingConverter : MarkupExtension, IValueConverter
@@ -28,7 +30,7 @@ namespace FontAwesome5.Converters
                 brush = Brushes.Black;
             }
 
-            return ImageAwesome.CreateDrawing((EFontAwesomeIcon)value, brush);
+            return ((EFontAwesomeIcon)value).CreateDrawing(brush);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
