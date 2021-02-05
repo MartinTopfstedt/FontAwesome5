@@ -43,14 +43,20 @@ namespace FontAwesome5
         private static void ContentChanged(DependencyObject sender, DependencyPropertyChangedEventArgs evt)
         {
             // If target is not a ContenControl just ignore: Awesome.Content property can only be set on a ContentControl element
-            if (!(sender is ContentControl)) return;
+            if (sender is not ContentControl)
+            {
+                return;
+            }
 
-            ContentControl target = (ContentControl)sender;
+            var target = (ContentControl)sender;
 
             // If value is not a FontAwesomeIcon just ignore: Awesome.Content property can only be set to a FontAwesomeIcon value
-            if (!(evt.NewValue is EFontAwesomeIcon)) return;
+            if (evt.NewValue is not EFontAwesomeIcon)
+            {
+                return;
+            }
 
-            EFontAwesomeIcon symbolIcon = (EFontAwesomeIcon)evt.NewValue;
+            var symbolIcon = (EFontAwesomeIcon)evt.NewValue;
             
             target.FontFamily = symbolIcon.GetFontFamily();
             target.Content = symbolIcon.GetUnicode();

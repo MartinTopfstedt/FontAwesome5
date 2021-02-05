@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 #if WINDOWS_UWP
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -91,7 +92,7 @@ namespace FontAwesome5.Extensions
         /// <summary>
         /// The key used for storing the spinner Storyboard.
         /// </summary>
-        private static readonly string PulseStoryBoardName = String.Format("{0}Pulse", typeof(FontAwesome).Name);
+        private static readonly string PulseStoryBoardName = string.Format("{0}Pulse", nameof(FontAwesome));
 
         /// <summary>
         /// Start the pulse animation

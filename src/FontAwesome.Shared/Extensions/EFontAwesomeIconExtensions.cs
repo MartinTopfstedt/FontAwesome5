@@ -17,18 +17,14 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static Typeface GetTypeFace(this EFontAwesomeIcon icon)
         {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return Fonts.RegularTypeface;
-
-            return info.Style switch
+            switch (icon.GetStyle())
             {
-                EFontAwesomeStyle.Regular => Fonts.RegularTypeface,
-                EFontAwesomeStyle.Solid => Fonts.SolidTypeface,
-                EFontAwesomeStyle.Brands => Fonts.BrandsTypeface,
+                case EFontAwesomeStyle.Regular: return Fonts.RegularTypeface;
+                case EFontAwesomeStyle.Solid: return Fonts.SolidTypeface;
+                case EFontAwesomeStyle.Brands: return Fonts.BrandsTypeface;
+            }
 
-                _ => null,
-            };
+            return Fonts.RegularTypeface;
         }
 #endif
         /// <summary>
@@ -36,18 +32,14 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static FontFamily GetFontFamily(this EFontAwesomeIcon icon)
         {
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return Fonts.RegularFontFamily;
-
-            switch (info.Style)
+            switch (icon.GetStyle())
             {
                 case EFontAwesomeStyle.Regular: return Fonts.RegularFontFamily;
                 case EFontAwesomeStyle.Solid: return Fonts.SolidFontFamily;
-                case EFontAwesomeStyle.Brands: return Fonts.BrandsFontFamily;
+                case EFontAwesomeStyle.Brands: return Fonts.BrandsFontFamily;   
             }
 
-            return null;
+            return Fonts.RegularFontFamily;
         }
     }
 }

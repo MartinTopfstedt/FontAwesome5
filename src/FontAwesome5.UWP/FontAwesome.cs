@@ -88,12 +88,15 @@ namespace FontAwesome5
 
         private static void OnSpinPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as FontAwesome;
-
-            if (fontAwesome == null) return;
+            if (!(d is FontAwesome fontAwesome))
+            {
+                return;
+            }
 
             if ((bool)e.NewValue)
+            {
                 fontAwesome.BeginSpin();
+            }
             else
             {
                 fontAwesome.StopSpin();
@@ -112,7 +115,10 @@ namespace FontAwesome5
 
         private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             fontAwesome.StopSpin();
             fontAwesome.BeginSpin();
@@ -129,9 +135,11 @@ namespace FontAwesome5
 
         private static void OnPulsePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as FontAwesome;
+            if (!(d is FontAwesome fontAwesome))
+            {
+                return;
+            }
 
-            if (fontAwesome == null) return;
             if ((bool)e.NewValue)
             {
                 fontAwesome.BeginPulse();
@@ -154,7 +162,11 @@ namespace FontAwesome5
 
         private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (!(d is FontAwesome fontAwesome) || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
+
             fontAwesome.StopPulse();
             fontAwesome.BeginPulse();
         }
@@ -170,9 +182,10 @@ namespace FontAwesome5
 
         private static void RotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as FontAwesome;
-
-            if (null == fontAwesome || fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue)) return;
+            if (!(d is FontAwesome fontAwesome) || fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             fontAwesome.SetRotation();
         }
@@ -188,9 +201,10 @@ namespace FontAwesome5
 
         private static void FlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var fontAwesome = d as FontAwesome;
-
-            if (null == fontAwesome || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue)) return;
+            if (!(d is FontAwesome fontAwesome) || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue))
+            {
+                return;
+            }
 
             fontAwesome.SetFlipOrientation();
         }

@@ -1,12 +1,17 @@
-﻿using FontAwesome5.Extensions;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 using System.Windows.Data;
 using System.Windows.Markup;
+using System.Windows.Media;
+
+using FontAwesome5.Extensions;
 
 namespace FontAwesome5.Converters
 {
-    public class LabelConverter : MarkupExtension, IValueConverter
+    public class DrawingConverter : MarkupExtension, IValueConverter
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -20,14 +25,12 @@ namespace FontAwesome5.Converters
                 return null;
             }
 
-            var icon = (EFontAwesomeIcon)value;
-            var info = icon.GetInformation();
-            if (info == null)
+            if (parameter is not Brush brush)
             {
-                return null;
+                brush = Brushes.Black;
             }
 
-            return parameter is string format && !string.IsNullOrEmpty(format) ? string.Format(format, info.Label, info.Style) : info.Label;
+            return ((EFontAwesomeIcon)value).CreateDrawing(brush);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
