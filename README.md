@@ -18,7 +18,7 @@ https://www.nuget.org/packages/FontAwesome5
 
 #### Usage XAML
 
-The usage is the same like the version from charri, just the FontAwesomeIcon enumeration has changed to EFontAwesomeIcon and has the Styles included, which means "Flag" changed to "Solid_Flag" or "Regular_Flag".
+The usage is the same like the version from charri, just the FontAwesomeIcon enumeration has changed to EFontAwesomeIcon and has the Styles included, which means "Flag" changed to "Solid_Flag" or "Regular_Flag", and the name space changed from "http://schemas.fontawesome.io" to "http://schemas.fontawesome.com".
 
 https://github.com/charri/Font-Awesome-WPF/blob/master/README-WPF.md#usage-xaml
 
