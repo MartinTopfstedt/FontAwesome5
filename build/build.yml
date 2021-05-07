@@ -26,10 +26,10 @@ steps:
     BuildVersion: $(GitVersion.NuGetVersionV2)
 
 - task: UseDotNet@2
-  displayName: 'Install .NET Core 3.x'
+  displayName: 'Install .NET Core'
   inputs:
     packageType: 'sdk'
-    version: '3.x'
+    version: '5.x'
     includePreviewVersions: true
     performMultiLevelLookup: true
 
