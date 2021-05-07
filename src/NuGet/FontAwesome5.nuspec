@@ -6,7 +6,7 @@
         <description>
             WPF (.Net and .Net Core) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
             For examples https://github.com/MartinTopfstedt/FontAwesome5
-            Font-Awesome Version: 5.15.2
+            Font-Awesome Version: 5.15.3
         </description>
         <authors>Codinion</authors>
         <license type="expression">MIT</license>
