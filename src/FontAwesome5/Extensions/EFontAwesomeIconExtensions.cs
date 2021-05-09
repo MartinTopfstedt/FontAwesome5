@@ -14,7 +14,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static FontAwesomeInformation GetInformation(this EFontAwesomeIcon icon)
         {
-            return FontAwesome.Information.TryGetValue(icon, out var info) ? info : null;
+            return FontAwesomeInternal.Information.TryGetValue(icon, out var info) ? info : null;
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static string GetLabel(this EFontAwesomeIcon icon)
         {
-            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Label : null;
+            return FontAwesomeInternal.Information.TryGetValue(icon, out var info) ? info.Label : null;
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static EFontAwesomeStyle GetStyle(this EFontAwesomeIcon icon)
         {
-            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Style : EFontAwesomeStyle.None;
+            return FontAwesomeInternal.Information.TryGetValue(icon, out var info) ? info.Style : EFontAwesomeStyle.None;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace FontAwesome5.Extensions
             path = string.Empty;
             width = -1;
             height = -1;
-            if (FontAwesome.Information.TryGetValue(icon, out var info) && info.Svg != null)
+            if (FontAwesomeInternal.Information.TryGetValue(icon, out var info) && info.Svg != null)
             {
                 path = info.Svg.Path;
                 width = info.Svg.Width;
@@ -57,7 +57,7 @@ namespace FontAwesome5.Extensions
         /// </summary>
         public static string GetUnicode(this EFontAwesomeIcon icon)
         {
-            return FontAwesome.Information.TryGetValue(icon, out var info) ? info.Unicode : char.ConvertFromUtf32(0);
+            return FontAwesomeInternal.Information.TryGetValue(icon, out var info) ? info.Unicode : char.ConvertFromUtf32(0);
         }        
     }
 }

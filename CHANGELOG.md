@@ -1,3 +1,5 @@
+# 2.1.2
+- Fixed issue #31
 # 2.1.1
 - Updated FontAwesome v5.15.3
 - Updated UWP Min Target to: 10.0.10240.0
