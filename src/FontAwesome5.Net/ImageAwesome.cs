@@ -259,7 +259,7 @@ namespace FontAwesome5
                 return;
             }
 
-            imageAwesome.SetValue(SourceProperty, imageAwesome.Icon.CreateImageSource(imageAwesome.Foreground));
+            imageAwesome.SetValue(SourceProperty, imageAwesome.Icon.CreateImageSource(imageAwesome.Foreground, new Pen()));
         }
 
 

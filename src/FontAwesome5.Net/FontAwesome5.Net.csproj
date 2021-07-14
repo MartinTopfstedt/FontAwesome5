@@ -30,10 +30,6 @@
     <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Fonts\" />
-  </ItemGroup>
-
   <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
 
 </Project>

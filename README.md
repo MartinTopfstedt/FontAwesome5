@@ -12,15 +12,31 @@ Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
 #### Installation
 
-```Install-Package FontAwesome5```
-
-https://www.nuget.org/packages/FontAwesome5
+1. Install the FontAwesome5 NuGet Package:  ```Install-Package FontAwesome5```
+2. Add the FontAwesome5 ReosurceDictionary to your App.xaml
+``` 
+<Application x:Class="FontAwesome5.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FontAwesome5.WPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FontAwesome5.Net;component/FontAwesome5Dictionary.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
+``` 
 
 #### Usage XAML
 
 The usage is the same like the version from charri, just the FontAwesomeIcon enumeration has changed to EFontAwesomeIcon and has the Styles included, which means "Flag" changed to "Solid_Flag" or "Regular_Flag", and the name space changed from "http://schemas.fontawesome.io" to "http://schemas.fontawesome.com".
 
 https://github.com/charri/Font-Awesome-WPF/blob/master/README-WPF.md#usage-xaml
+
+
 
 #### Usage XAML SVG
 
@@ -43,6 +59,10 @@ The SvgAwesome can be used like the ImageAwesome.
 #### ImageSourceConverter
 
 https://github.com/charri/Font-Awesome-WPF/blob/master/README-WPF.md#imagesourceconverter
+
+#### ImageSourceSvgConverter
+
+This is the same like the *ImageSourceConverter*, except it does use the Svg information to draw the icon instead of the font.
 
 #### LabelConverter
 
