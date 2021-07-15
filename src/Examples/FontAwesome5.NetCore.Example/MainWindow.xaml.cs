@@ -12,19 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using FontAwesome5.NetCore30.Example.ViewModels;
 
 namespace FontAwesome5.NetCore30.Example
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
+  {
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            DataContext = new MainWindowViewModel();
-            InitializeComponent();
-        }
+      DataContext = new MainWindowViewModel();
+      InitializeComponent();
     }
+  }
 }

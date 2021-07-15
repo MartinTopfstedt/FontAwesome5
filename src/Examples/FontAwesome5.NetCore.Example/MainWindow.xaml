@@ -5,112 +5,98 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FontAwesome5.NetCore30.Example"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
+        xmlns:fontawesome5="clr-namespace:FontAwesome5;assembly=FontAwesome5"
         mc:Ignorable="d"
         Title="FontAwesome5.NetCore.Example" Height="632" Width="883">
-    <Window.Resources>
-        <fa5:LabelConverter x:Key="LabelConverter"/>
-        <fa5:StyleConverter x:Key="StyleConverter"/>
-        <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
-        <fa5:DrawingConverter x:Key="DrawingConverter"/>
-    </Window.Resources>
-    <Window.Icon>
-        <DrawingImage Drawing="{Binding SelectedIcon, Converter={StaticResource DrawingConverter}}">
-        </DrawingImage>
-    </Window.Icon>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Font Size:" VerticalAlignment="Center"/>
-                <Slider Minimum="0" Maximum="60" Value="{Binding FontSize, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
-                <TextBlock Text="{Binding FontSize, StringFormat={}{0:#.##}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
-                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Spin:" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding SpinIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Slider Minimum="0" Maximum="10" Value="{Binding SpinDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
-                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Pulse:" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding PulseIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Slider Minimum="0" Maximum="10" Value="{Binding PulseDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
-                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Rotation:" VerticalAlignment="Center"/>
-                <Slider Minimum="0" Maximum="360" Value="{Binding Rotation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
-                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Flip:" VerticalAlignment="Center"/>
-                <ComboBox ItemsSource="{Binding FlipOrientations}" SelectedItem="{Binding FlipOrientation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
-                <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock Text="Visibility:" VerticalAlignment="Center"/>
-                <ComboBox ItemsSource="{Binding Visibilities}" SelectedItem="{Binding Visibility, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
-            </StackPanel>
-        </StackPanel>
+  <Window.Resources>
+    <fa5:LabelConverter x:Key="LabelConverter"/>
+    <fa5:StyleConverter x:Key="StyleConverter"/>
+    <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    <fa5:ImageSourceSvgConverter x:Key="ImageSourceSvgConverter"/>
+    <fa5:DrawingConverter x:Key="DrawingConverter"/>
+  </Window.Resources>
+  <Window.Icon>
+    <DrawingImage Drawing="{Binding SelectedIcon, Converter={StaticResource DrawingConverter}}">
+    </DrawingImage>
+  </Window.Icon>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Font Size:" VerticalAlignment="Center"/>
+        <Slider Minimum="0" Maximum="60" Value="{Binding FontSize, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+        <TextBlock Text="{Binding FontSize, StringFormat={}{0:#.##}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
+        <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+      </StackPanel>
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Spin:" VerticalAlignment="Center"/>
+        <CheckBox IsChecked="{Binding SpinIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Slider Minimum="0" Maximum="10" Value="{Binding SpinDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
+        <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+      </StackPanel>
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Pulse:" VerticalAlignment="Center"/>
+        <CheckBox IsChecked="{Binding PulseIsEnabled, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Slider Minimum="0" Maximum="10" Value="{Binding PulseDuration, UpdateSourceTrigger=PropertyChanged}" Width="150"  Margin="5,0,0,0"/>
+        <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+      </StackPanel>
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Rotation:" VerticalAlignment="Center"/>
+        <Slider Minimum="0" Maximum="360" Value="{Binding Rotation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+        <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+      </StackPanel>
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Flip:" VerticalAlignment="Center"/>
+        <ComboBox ItemsSource="{Binding FlipOrientations}" SelectedItem="{Binding FlipOrientation, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+        <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
+      </StackPanel>
+      <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+        <TextBlock Text="Visibility:" VerticalAlignment="Center"/>
+        <ComboBox ItemsSource="{Binding Visibilities}" SelectedItem="{Binding Visibility, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Width="100"/>
+      </StackPanel>
+    </StackPanel>
 
-        <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Icon">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
-                    <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+    <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
+      <ListView.View>
+        <GridView>
+          <GridViewColumn Header="Icon">
+            <GridViewColumn.CellTemplate>
+              <DataTemplate>
+                <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+              </DataTemplate>
+            </GridViewColumn.CellTemplate>
+          </GridViewColumn>
+          <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
+          <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
+        </GridView>
+      </ListView.View>
+    </ListView>
 
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <Grid Margin="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Enum Member: "/>
-                <TextBlock Grid.Column="1" Text="{Binding SelectedIcon, StringFormat=EFontAwesomeIcon.{0}}"/>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+      <TextBlock Text="SvgAwesome" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="NoWrap"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Label: "/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}}"/>
+      <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+      <TextBlock Text="ImageAwesome" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Label + Style: "/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}, ConverterParameter='{}{0} ({1})'}"/>
-            </Grid>
+      <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
+      <TextBlock Text="FontAwesome" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-            <TextBlock Text="{Binding SVGText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
+      <TextBlock Text="ImageSourceConverter" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-            <TextBlock Text="{Binding ImageText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceSvgConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
+      <TextBlock Text="ImageSourceSvgConverter" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-            <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
-
-            <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
-            <TextBlock Text="Using a converter" HorizontalAlignment="Center" FontWeight="Bold"/>
-
-            <Button fa5:Awesome.Content="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
-        </StackPanel>
-    </Grid>
+      <Button fa5:Awesome.Content="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
+      <TextBlock Text="fa5:Awesome.Content" HorizontalAlignment="Center" FontWeight="Bold"/>
+    </StackPanel>
+  </Grid>
 </Window>

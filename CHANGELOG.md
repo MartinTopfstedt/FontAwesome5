@@ -1,3 +1,11 @@
+# 2.1.4
+ - Removed ResourceDictionary(FontAwesome5Dictionary.xaml)
+ - Added new function for Font saving and loading to Fonts class.
+   - fonts now get saved to temporary directory and referenced from there to prevent memory leak
+# 2.1.3
+- Added ImageSourceSvgConverter
+- Made the Font Families adjustable on the static Fonts class
+- Introduced a new ReosurceDictionary (FontAwesome5Dictionary.xaml) to prevent memory leaks
 # 2.1.2
 - Fixed issue #31
 # 2.1.1

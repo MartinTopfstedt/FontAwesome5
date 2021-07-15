@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:FontAwesome5.NetCore30"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+
+  </Application.Resources>
 </Application>

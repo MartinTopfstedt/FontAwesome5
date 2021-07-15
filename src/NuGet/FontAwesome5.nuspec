@@ -1,79 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>FontAwesome5</id>
-        <version>$version$</version>
-        <description>
-            WPF (.Net and .Net Core) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
-            For examples https://github.com/MartinTopfstedt/FontAwesome5
-            Font-Awesome Version: 5.15.3
-        </description>
-        <authors>Codinion</authors>
-        <license type="expression">MIT</license>
-        <projectUrl>https://github.com/MartinTopfstedt/FontAwesome5</projectUrl>
-        <icon>icon.png</icon>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <tags>fontawesome fontawesome5</tags>
-        <copyright>Copyright © 2019 Codinion</copyright>
-    </metadata>
-    <files>
-        <file src="..\icon.png" target="" />
+  <metadata>
+    <id>FontAwesome5</id>
+    <version>$version$</version>
+    <description>
+      WPF (.Net and .Net Core) and UWP controls for the iconic SVG, font, and CSS toolkit Font Awesome 5.
+      For examples https://github.com/MartinTopfstedt/FontAwesome5
+      Font-Awesome Version: 5.15.3
+    </description>
+    <authors>Codinion</authors>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/MartinTopfstedt/FontAwesome5</projectUrl>
+    <icon>icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>fontawesome fontawesome5</tags>
+    <copyright>Copyright © 2019 Codinion</copyright>
+  </metadata>
+  <files>
+    <file src="..\icon.png" target="" />
 
-        <!-- .Net Standard 1.4 -->
-        <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
-        <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.xml" target="lib\netstandard1.4\" />
-        <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.pdb" target="lib\netstandard1.4\" />
+    <!-- .Net Standard 1.4 -->
+    <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.dll" target="lib\netstandard1.4\" />
+    <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.xml" target="lib\netstandard1.4\" />
+    <file src="..\FontAwesome5\bin\Release\netstandard1.4\FontAwesome5.pdb" target="lib\netstandard1.4\" />
 
-        <!-- .Net Framework 4.0 -->
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.dll" target="lib\net40\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.xml" target="lib\net40\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.pdb" target="lib\net40\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.dll" target="lib\net40\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.xml" target="lib\net40\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.pdb" target="lib\net40\" />
+    <!-- .Net Standard 2.1 -->
+    <file src="..\FontAwesome5\bin\Release\netstandard2.1\FontAwesome5.dll" target="lib\netstandard2.1\" />
+    <file src="..\FontAwesome5\bin\Release\netstandard2.1\FontAwesome5.xml" target="lib\netstandard2.1\" />
+    <file src="..\FontAwesome5\bin\Release\netstandard2.1\FontAwesome5.pdb" target="lib\netstandard2.1\" />
 
-        <!-- .Net Framework 4.6.2 -->
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.dll" target="lib\net462\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.xml" target="lib\net462\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.pdb" target="lib\net462\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.dll" target="lib\net462\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.xml" target="lib\net462\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.pdb" target="lib\net462\" />
+    <!-- .Net Standard 5.0 -->
+    <file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.dll" target="lib\net5.0\" />
+    <file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.xml" target="lib\net5.0\" />
+    <file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.pdb" target="lib\net5.0\" />
 
-        <!-- .Net Framework 4.7.2 -->
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.dll" target="lib\net472\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.xml" target="lib\net472\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.pdb" target="lib\net472\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.dll" target="lib\net472\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.xml" target="lib\net472\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.pdb" target="lib\net472\" />
+    <!-- .Net Framework 4.0 -->
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.dll" target="lib\net40\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.xml" target="lib\net40\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.pdb" target="lib\net40\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.dll" target="lib\net40\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.xml" target="lib\net40\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net40\FontAwesome5.Net.pdb" target="lib\net40\" />
 
-        <!-- .Net Core Framework 3.1 -->
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.dll" target="lib\netcoreapp3.1\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.xml" target="lib\netcoreapp3.1\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.pdb" target="lib\netcoreapp3.1\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.dll" target="lib\netcoreapp3.1\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.xml" target="lib\netcoreapp3.1\" />
-        <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.pdb" target="lib\netcoreapp3.1\" />
+    <!-- .Net Framework 4.6.2 -->
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.dll" target="lib\net462\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.xml" target="lib\net462\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.pdb" target="lib\net462\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.dll" target="lib\net462\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.xml" target="lib\net462\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net462\FontAwesome5.Net.pdb" target="lib\net462\" />
 
-        <!-- .Net 5.0 -->
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.dll" target="lib\net5.0-windows7.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.xml" target="lib\net5.0-windows7.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.pdb" target="lib\net5.0-windows7.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.dll" target="lib\net5.0-windows7.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.xml" target="lib\net5.0-windows7.0\" />
-        <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.pdb" target="lib\net5.0-windows7.0\" />
+    <!-- .Net Framework 4.7.2 -->
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.dll" target="lib\net472\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.xml" target="lib\net472\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.pdb" target="lib\net472\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.dll" target="lib\net472\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.xml" target="lib\net472\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net472\FontAwesome5.Net.pdb" target="lib\net472\" />
 
-        <!-- UWP -->
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.xml" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.pdb" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.xml" target="lib\uap10.0" />
-        <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Brands-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
-        <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Free-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" />
-        <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Free-Solid-900.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" />
-    </files>
+    <!-- .Net Core Framework 3.1 -->
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.dll" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.xml" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.pdb" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.dll" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.xml" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesome5.Net\bin\Release\netcoreapp3.1\FontAwesome5.Net.pdb" target="lib\netcoreapp3.1\" />
+
+    <!-- .Net 5.0 -->
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.dll" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.xml" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.pdb" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.dll" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.xml" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.pdb" target="lib\net5.0-windows7.0\" />
+
+    <!-- UWP -->
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.xml" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.pdb" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.dll" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pdb" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.pri" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.UWP.xml" target="lib\uap10.0" />
+    <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Brands-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Free-Regular-400.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <file src="..\FontAwesome5.UWP\bin\Release\Fonts\Font Awesome 5 Free-Solid-900.otf" target="lib\uap10.0\FontAwesome5.UWP\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+  </files>
 </package>

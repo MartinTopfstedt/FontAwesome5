@@ -45,10 +45,6 @@ namespace FontAwesome5.Net40.Example.ViewModels
         public List<EFlipOrientation> FlipOrientations { get; set; } = new List<EFlipOrientation>();
         public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
 
-        public string SVGText => $"<fa5:SvgAwesome Icon=\"{SelectedIcon}\" Height=\"100\" Width=\"100\">";
-        public string ImageText => $"<fa5:ImageAwesome Icon=\"{SelectedIcon}\" Height=\"100\" Width=\"100\">";
-        public string FontText => $"<fa5:FontAwesome Icon=\"{SelectedIcon}\" FontSize=\"{FontSize}\">";
-
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
