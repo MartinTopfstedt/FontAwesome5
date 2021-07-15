@@ -160,12 +160,6 @@
   <ItemGroup>
     <None Include="Key.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <Page Include="FontAwesome5Dictionary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
   <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

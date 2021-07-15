@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,74 +16,67 @@ namespace FontAwesome5
   /// </summary>
   public static class Fonts
   {
+    static Fonts()
+    {
+      _resManager = new ResourceManager("FontAwesome5.Net.g", Assembly.GetExecutingAssembly());
+
+      var path = Path.GetTempPath();
+      SaveFontFilesToDirectory(path);
+      LoadFromDirectory(path);
+    }
+
+    public static void LoadFromResource()
+    {
+      RegularFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Regular");
+      SolidFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Solid");
+      BrandsFontFamily = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Brands Regular");
+    }
+
+    public static void LoadFromDirectory(string path)
+    {   
+      RegularFontFamily = new FontFamily(new Uri($"file:///{path}", UriKind.Absolute), "./#Font Awesome 5 Free Regular");
+      SolidFontFamily = new FontFamily(new Uri($"file:///{path}", UriKind.Absolute), "./#Font Awesome 5 Free Solid");
+      BrandsFontFamily = new FontFamily(new Uri($"file:///{path}", UriKind.Absolute), "./#Font Awesome 5 Brands Regular");
+    }
+
+    public static void SaveFontFilesToDirectory(string path)
+    {
+      WriteResourceToFile($"Fonts/Font Awesome 5 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 5 Free-Solid-900.otf"));
+      WriteResourceToFile($"Fonts/Font Awesome 5 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Free-Regular-400.otf"));
+      WriteResourceToFile($"Fonts/Font Awesome 5 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Brands-Regular-400.otf"));
+    }
+
+    private static void WriteResourceToFile(string resourceName, string fileName)
+    {      
+      if (File.Exists(fileName))
+      {
+        return;
+      }
+
+      using (var res = _resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
+      {
+        using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+        {
+          res.CopyTo(file);
+        }
+      }
+    }
+
     /// <summary>
     /// FontAwesome5 Regular FontFamily
     /// </summary>
-    public static FontFamily RegularFontFamily
-    {
-      set { _regularFontFamily = value; }
-      get
-      {
-        if (_regularFontFamily != null)
-        {
-          return _regularFontFamily;
-        }
-        else if (Application.Current.Resources["FontAwesome5Regular"] is FontFamily resource)
-        {
-          return resource;
-        }
-
-        return RegularFontFamilyResource;
-      }
-    }
-    private static FontFamily _regularFontFamily;
-    public static FontFamily RegularFontFamilyResource = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Regular");
+    public static FontFamily RegularFontFamily;
 
     /// <summary>
     /// FontAwesome5 Solid FontFamily
     /// </summary>
-    public static FontFamily SolidFontFamily
-    {
-      set { _solidFontFamily = value; }
-      get
-      {
-        if (_solidFontFamily != null)
-        {
-          return _solidFontFamily;
-        }
-        else if (Application.Current.Resources["FontAwesome5Solid"] is FontFamily resource)
-        {
-          return resource;
-        }
-
-        return SolidFontFamilyResource;
-      }
-    }
-    private static FontFamily _solidFontFamily;
-    public static FontFamily SolidFontFamilyResource = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Free Solid");
+    public static FontFamily SolidFontFamily;
 
     /// <summary>
     /// FontAwesome5 Brands FontFamily
     /// </summary>
-    public static FontFamily BrandsFontFamily
-    {
-      set { _brandsFontFamily = value; }
-      get
-      {
-        if (_brandsFontFamily != null)
-        {
-          return _brandsFontFamily;
-        }
-        else if (Application.Current.Resources["FontAwesome5Brands"] is FontFamily resource)
-        {
-          return resource;
-        }
-
-        return BrandsFontFamilyResource;
-      }
-    }
-    private static FontFamily _brandsFontFamily;
-    public static FontFamily BrandsFontFamilyResource = new FontFamily(new Uri("pack://application:,,,/FontAwesome5.Net;component/"), "./Fonts/#Font Awesome 5 Brands Regular");
+    public static FontFamily BrandsFontFamily;
+ 
 
     /// <summary>
     /// FontAwesome5 Regular Typeface
@@ -94,5 +90,7 @@ namespace FontAwesome5
     /// FontAwesome5 Brands Typeface
     /// </summary>
     public static Typeface BrandsTypeface => new Typeface(BrandsFontFamily, FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
+
+    private static readonly ResourceManager _resManager;
   }
 }

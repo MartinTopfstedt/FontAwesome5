@@ -4,10 +4,6 @@
              xmlns:local="clr-namespace:FontAwesome5.NetCore30"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/FontAwesome5.Net;component/FontAwesome5Dictionary.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
+
   </Application.Resources>
 </Application>

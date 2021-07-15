@@ -13,22 +13,7 @@ Font Awesome: https://github.com/FortAwesome/Font-Awesome
 #### Installation
 
 1. Install the FontAwesome5 NuGet Package:  ```Install-Package FontAwesome5```
-2. Add the FontAwesome5 ReosurceDictionary to your App.xaml
-``` 
-<Application x:Class="FontAwesome5.WPF.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:FontAwesome5.WPF"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/FontAwesome5.Net;component/FontAwesome5Dictionary.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </Application.Resources>
-</Application>
-``` 
+
 
 #### Usage XAML
 

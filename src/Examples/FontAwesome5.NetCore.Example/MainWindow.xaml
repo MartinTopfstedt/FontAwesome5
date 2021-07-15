@@ -11,7 +11,8 @@
   <Window.Resources>
     <fa5:LabelConverter x:Key="LabelConverter"/>
     <fa5:StyleConverter x:Key="StyleConverter"/>
-    <fa5:ImageSourceSvgConverter x:Key="ImageSourceConverter"/>
+    <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    <fa5:ImageSourceSvgConverter x:Key="ImageSourceSvgConverter"/>
     <fa5:DrawingConverter x:Key="DrawingConverter"/>
   </Window.Resources>
   <Window.Icon>
@@ -68,8 +69,7 @@
           <GridViewColumn Header="Icon">
             <GridViewColumn.CellTemplate>
               <DataTemplate>
-                <Image Width="32" Height="32" Source="{Binding Source={x:Static fontawesome5:EFontAwesomeIcon.Solid_Ad}, Converter={StaticResource ImageSourceConverter}}"></Image>
-                <!--<fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>-->
+                <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
               </DataTemplate>
             </GridViewColumn.CellTemplate>
           </GridViewColumn>
@@ -80,39 +80,23 @@
     </ListView>
 
     <StackPanel Grid.Column="1" Grid.Row="1">
-      <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="Auto"/>
-          <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-          <RowDefinition/>
-          <RowDefinition/>
-          <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Enum Member: "/>
-        <TextBlock Grid.Column="1" Text="{Binding SelectedIcon, StringFormat=EFontAwesomeIcon.{0}}"/>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Label: "/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}}"/>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Label + Style: "/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedIcon, Converter={StaticResource LabelConverter}, ConverterParameter='{}{0} ({1})'}"/>
-      </Grid>
-
       <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-      <TextBlock Text="{Binding SVGText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <TextBlock Text="SvgAwesome" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="NoWrap"/>
 
       <fa5:ImageAwesome Icon="{Binding SelectedIcon}" Width="50" Height="50" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-      <TextBlock Text="{Binding ImageText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <TextBlock Text="ImageAwesome" HorizontalAlignment="Center" FontWeight="Bold"/>
 
       <fa5:FontAwesome Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
-      <TextBlock Text="{Binding FontText}" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <TextBlock Text="FontAwesome" HorizontalAlignment="Center" FontWeight="Bold"/>
 
       <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
-      <TextBlock Text="Using a converter" HorizontalAlignment="Center" FontWeight="Bold"/>
+      <TextBlock Text="ImageSourceConverter" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+      <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceSvgConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
+      <TextBlock Text="ImageSourceSvgConverter" HorizontalAlignment="Center" FontWeight="Bold"/>
 
       <Button fa5:Awesome.Content="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
+      <TextBlock Text="fa5:Awesome.Content" HorizontalAlignment="Center" FontWeight="Bold"/>
     </StackPanel>
   </Grid>
 </Window>

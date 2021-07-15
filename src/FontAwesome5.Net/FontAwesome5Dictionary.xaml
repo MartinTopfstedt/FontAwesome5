@@ -1,6 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <FontFamily x:Key="FontAwesome5Regular">pack://application:,,,/FontAwesome5.Net;component/./Fonts/#Font Awesome 5 Free Regular</FontFamily>
-  <FontFamily x:Key="FontAwesome5Solid">pack://application:,,,/FontAwesome5.Net;component/./Fonts/#Font Awesome 5 Free Solid</FontFamily>
-  <FontFamily x:Key="FontAwesome5Brands">pack://application:,,,/FontAwesome5.Net;component/./Fonts/#Font Awesome 5 Brands Regular</FontFamily>
-</ResourceDictionary>
