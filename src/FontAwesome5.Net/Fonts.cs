@@ -18,8 +18,6 @@ namespace FontAwesome5
   {
     static Fonts()
     {
-      _resManager = new ResourceManager("FontAwesome5.Net.g", Assembly.GetExecutingAssembly());
-
       var path = Path.GetTempPath();
       SaveFontFilesToDirectory(path);
       LoadFromDirectory(path);
@@ -41,19 +39,20 @@ namespace FontAwesome5
 
     public static void SaveFontFilesToDirectory(string path)
     {
-      WriteResourceToFile($"Fonts/Font Awesome 5 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 5 Free-Solid-900.otf"));
-      WriteResourceToFile($"Fonts/Font Awesome 5 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Free-Regular-400.otf"));
-      WriteResourceToFile($"Fonts/Font Awesome 5 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Brands-Regular-400.otf"));
+      var resManager = new ResourceManager("FontAwesome5.Net.g", Assembly.GetExecutingAssembly());
+      WriteResourceToFile(resManager, $"Fonts/Font Awesome 5 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 5 Free-Solid-900.otf"));
+      WriteResourceToFile(resManager, $"Fonts/Font Awesome 5 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Free-Regular-400.otf"));
+      WriteResourceToFile(resManager, $"Fonts/Font Awesome 5 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 5 Brands-Regular-400.otf"));
     }
 
-    private static void WriteResourceToFile(string resourceName, string fileName)
+    private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
     {      
       if (File.Exists(fileName))
       {
         return;
       }
 
-      using (var res = _resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
+      using (var res = resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
       {
         using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
         {
@@ -90,7 +89,5 @@ namespace FontAwesome5
     /// FontAwesome5 Brands Typeface
     /// </summary>
     public static Typeface BrandsTypeface => new Typeface(BrandsFontFamily, FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
-
-    private static readonly ResourceManager _resManager;
   }
 }
