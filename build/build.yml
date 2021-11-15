@@ -79,6 +79,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: VSBuild@1
+  displayName: 'Build: WinUI'
+  inputs:
+    solution: 'src/FontAwesome5.WinUI.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
   inputs:
