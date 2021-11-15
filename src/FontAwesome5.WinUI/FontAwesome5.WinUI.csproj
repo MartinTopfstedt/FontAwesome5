@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>FontAwesome5.WinUI</RootNamespace>
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+		<DefineConstants>WINUI</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>Martin Topfstedt</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>Copyright © Codinion 2018</Copyright>
+		<Company>Codinion</Company>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+	  <EmbeddedResource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Regular-400.otf" Link="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+	  <EmbeddedResource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf" Link="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.5" />
+		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.5" />
+		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj" />
+	</ItemGroup>
+
+	<Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
+</Project>

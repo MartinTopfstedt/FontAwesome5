@@ -1,0 +1,3 @@
+# Code files
+[*.cs]
+indent_size = 2
