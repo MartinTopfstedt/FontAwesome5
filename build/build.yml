@@ -57,7 +57,7 @@ steps:
   displayName: 'Update FontAwesome SubModule'
   inputs:
     script: |
-      git submodule update --recursive --remote
+      git submodule update --init --recursive
     workingDirectory: '.'
 
 - task: DotNetCoreCLI@2
