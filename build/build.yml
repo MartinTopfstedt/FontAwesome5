@@ -57,7 +57,11 @@ steps:
   displayName: 'Update FontAwesome SubModule'
   inputs:
     script: |
-      git submodule update --init --recursive
+      cd Font-Awesome
+      git checkout master
+      git pull
+      cd ..
+      .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
     workingDirectory: '.'
 
 - task: DotNetCoreCLI@2
