@@ -29,7 +29,7 @@ steps:
   displayName: 'Install .NET Core'
   inputs:
     packageType: 'sdk'
-    version: '5.x'
+    version: '6.x'
     includePreviewVersions: true
     performMultiLevelLookup: true
 
