@@ -7,6 +7,11 @@ using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
+#elif WINUI
+using Windows.Foundation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 #else
 using System.Windows;
 using System.Windows.Media;
@@ -61,7 +66,7 @@ namespace FontAwesome5.Extensions
             storyboard.Children.Add(animation);
 
             Storyboard.SetTarget(animation, control);
-#if WINDOWS_UWP
+#if WINDOWS_UWP || WINUI
             Storyboard.SetTargetProperty(animation, "(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)");
 #else
             Storyboard.SetTargetProperty(animation,
@@ -119,7 +124,7 @@ namespace FontAwesome5.Extensions
 
             var storyboard = new Storyboard();
 
-#if WINDOWS_UWP
+#if WINDOWS_UWP || WINUI
             var animation = new DoubleAnimationUsingKeyFrames()
             {
                 AutoReverse = false,
@@ -158,7 +163,7 @@ namespace FontAwesome5.Extensions
             storyboard.Children.Add(animation);
 
             Storyboard.SetTarget(animation, control);
-#if WINDOWS_UWP
+#if WINDOWS_UWP || WINUI
             Storyboard.SetTargetProperty(animation, "(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)");
 #else
             Storyboard.SetTargetProperty(animation,

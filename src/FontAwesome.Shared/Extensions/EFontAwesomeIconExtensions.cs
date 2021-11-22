@@ -1,6 +1,8 @@
 ﻿using FontAwesome5.Extensions;
 #if WINDOWS_UWP
 using Windows.UI.Xaml.Media;
+#elif WINUI
+using Microsoft.UI.Xaml.Media;
 #else
 using System.Windows.Media;
 #endif
@@ -11,7 +13,7 @@ namespace FontAwesome5.Extensions
     /// </summary>
     public static class EFontAwesomeIconExtensions
     {
-#if !WINDOWS_UWP
+#if !WINDOWS_UWP && !WINUI
         /// <summary>
         /// Get the Typeface of an icon
         /// </summary>

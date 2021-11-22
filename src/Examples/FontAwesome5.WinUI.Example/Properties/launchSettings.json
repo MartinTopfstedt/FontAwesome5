@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FontAwesome5.WinUI.Example (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FontAwesome5.WinUI.Example (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

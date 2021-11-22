@@ -16,12 +16,12 @@ namespace FontAwesome5
     /// FontAwesome5 Regular FontFamily
     /// </summary>
     public static FontFamily RegularFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Regular-400.otf#Font Awesome 5 Free");
-   
+
     /// <summary>
     /// FontAwesome5 Solid FontFamily
     /// </summary>
     public static FontFamily SolidFontFamily = new FontFamily("ms-appx:///FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free");
-   
+
     /// <summary>
     /// FontAwesome5 Brands FontFamily
     /// </summary>

@@ -29,7 +29,7 @@ steps:
   displayName: 'Install .NET Core'
   inputs:
     packageType: 'sdk'
-    version: '5.x'
+    version: '6.x'
     includePreviewVersions: true
     performMultiLevelLookup: true
 
@@ -75,6 +75,14 @@ steps:
   displayName: 'Build: UWP'
   inputs:
     solution: 'src/FontAwesome5.UWP.sln'
+    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSBuild@1
+  displayName: 'Build: WinUI'
+  inputs:
+    solution: 'src/FontAwesome5.WinUI.sln'
     msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
