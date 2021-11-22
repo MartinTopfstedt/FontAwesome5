@@ -1,35 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <TargetFrameworks>net40;net462;net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
-    <UseWPF>true</UseWPF>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <AssemblyName>FontAwesome5.Net</AssemblyName>
-    <RootNamespace>FontAwesome5</RootNamespace>
-     <LangVersion>latest</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net40;net462;net472;netcoreapp3.1;net5.0-windows;net6.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+		<AssemblyName>FontAwesome5.Net</AssemblyName>
+		<RootNamespace>FontAwesome5</RootNamespace>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <DocumentationFile>$(OutDir)\FontAwesome5.Net.xml</DocumentationFile>
-    <Authors>Martin Topfstedt</Authors>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright © Codinion 2018</Copyright>
-    <Company>Codinion</Company>
-  </PropertyGroup>
+	<PropertyGroup>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<Authors>Martin Topfstedt</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>Copyright © Codinion 2018</Copyright>
+		<Company>Codinion</Company>
+	</PropertyGroup>
 
 
-  <ItemGroup>
-    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
-    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Regular-400.otf" Link="Fonts\Font Awesome 5 Free-Regular-400.otf" />
-    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf" Link="Fonts\Font Awesome 5 Free-Solid-900.otf" />
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+		<Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Regular-400.otf" Link="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+		<Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Free-Solid-900.otf" Link="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj" />
+	</ItemGroup>
 
-  <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
+	<Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
 
 </Project>

@@ -9324,12 +9324,6 @@ namespace FontAwesome5
 		Brands_Trello,
 		
 		/// <summary>
-		/// TripAdvisor
-		/// </summary>
-		///<see href="http://fontawesome.com/icons/tripadvisor?style=brands" />
-		Brands_Tripadvisor,
-		
-		/// <summary>
 		/// Tumblr
 		/// </summary>
 		///<see href="http://fontawesome.com/icons/tumblr?style=brands" />

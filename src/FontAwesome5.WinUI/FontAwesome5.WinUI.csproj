@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<DocumentationFile>$(OutDir)\FontAwesome5.WinUI.xml</DocumentationFile>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<Authors>Martin Topfstedt</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Copyright>Copyright © Codinion 2018</Copyright>
