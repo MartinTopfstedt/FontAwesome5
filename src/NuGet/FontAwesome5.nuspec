@@ -102,6 +102,9 @@
 		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\FontAwesome5.WinUI.pdb" target="lib\net6.0-windows10.0.19041.0" />
 		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\FontAwesome5.WinUI.pri" target="lib\net6.0-windows10.0.19041.0" />
 		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\FontAwesome5.WinUI.xml" target="lib\net6.0-windows10.0.19041.0" />
+		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\Fonts\Font Awesome 5 Brands-Regular-400.otf" target="lib\net6.0-windows10.0.19041.0\FontAwesome5.WinUI\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\Fonts\Font Awesome 5 Free-Regular-400.otf" target="lib\net6.0-windows10.0.19041.0\FontAwesome5.WinUI\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\Fonts\Font Awesome 5 Free-Solid-900.otf" target="lib\net6.0-windows10.0.19041.0\FontAwesome5.WinUI\Fonts\Font Awesome 5 Free-Solid-900.otf" />
 
 	</files>
 </package>
