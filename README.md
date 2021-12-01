@@ -1,3 +1,5 @@
+Check out https://github.com/MartinTopfstedt/FontAwesome6
+
 # FontAwesome5
 
 [![Build Status](https://dev.azure.com/codinion/FontAwesome5/_apis/build/status/MartinTopfstedt.FontAwesome5?branchName=master)](https://dev.azure.com/codinion/FontAwesome5/_build/latest?definitionId=11&branchName=master)
