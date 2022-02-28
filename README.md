@@ -1,4 +1,5 @@
-Check out https://github.com/MartinTopfstedt/FontAwesome6/tree/release/v1.0.0
+
+> **FontAwesome 6 is out.** ->  Check out https://github.com/MartinTopfstedt/FontAwesome6
 
 # FontAwesome5
 
