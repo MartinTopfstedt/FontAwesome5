@@ -2,11 +2,12 @@
     x:Class="FontAwesome5.UWP.Example.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FontAwesome5.UWP.Example"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:fa5="using:FontAwesome5"
+    xmlns:viewModels="clr-namespace:FontAwesome5.UWP.Example.ViewModels"
     mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
      
     <Grid>
@@ -44,17 +45,30 @@
             </StackPanel>
         </StackPanel>
 
-        <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding AllIcons}" 
-                  SelectedItem="{Binding SelectedIcon, Mode=TwoWay}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <fa5:FontAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding}"></TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Filter:  " Grid.Column="0" Grid.Row="0" Margin="5,0,0,5" />
+            <TextBox Grid.Column="1" Grid.Row="0" ToolTipService.ToolTip ="String or Regex.."  Margin="0, 0, 0, 5"
+                     Text="{Binding FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ListView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding VisibleIcons}" 
+                      SelectedItem="{Binding SelectedIcon, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <fa5:FontAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
 
         <StackPanel Grid.Column="1" Grid.Row="1">
             <Grid Margin="5">

@@ -4,8 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace FontAwesome5.NetCore30.Example.ViewModels
@@ -17,7 +16,7 @@ namespace FontAwesome5.NetCore30.Example.ViewModels
       AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
                   .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetLabel()).ToList();
       AllIcons.Remove(EFontAwesomeIcon.None);
-      SelectedIcon = AllIcons.First();
+      UpdateVisibleIcons();
 
       FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
       SpinDuration = 5;
@@ -46,5 +45,46 @@ namespace FontAwesome5.NetCore30.Example.ViewModels
     public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
 
     public event PropertyChangedEventHandler PropertyChanged;
+
+    #region Visible Icon Filtering
+    
+    public List<EFontAwesomeIcon> VisibleIcons { get; private set; }
+
+    public string FilterText { get; set; }
+    private void OnFilterTextChanged()
+    {
+      UpdateVisibleIcons();
+    }
+
+    private void UpdateVisibleIcons()
+    {
+      var addAll = string.IsNullOrWhiteSpace(FilterText);
+
+      //Confirm regex is valid
+      if (!addAll)
+      {
+        try
+        {
+          _ = Regex.IsMatch(string.Empty, FilterText);
+        }
+        catch (Exception)
+        {
+          addAll = true;
+        }
+      }
+
+      //Add all if no proper filter is applied
+      VisibleIcons = addAll
+        ? AllIcons
+        : new List<EFontAwesomeIcon>(AllIcons.Where(icon => Regex.IsMatch(
+          icon.GetInformation().Label
+          , FilterText
+          , RegexOptions.IgnoreCase
+        )));
+
+      SelectedIcon = VisibleIcons.FirstOrDefault();
+    }
+
+    #endregion
   }
 }
