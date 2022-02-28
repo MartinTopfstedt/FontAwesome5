@@ -109,8 +109,6 @@ namespace FontAwesome5.UWP.Example.ViewModels
         }
 
         private double _rotation;
-        private string _filterText;
-
         public double Rotation
         {
             get => _rotation;
@@ -139,6 +137,7 @@ namespace FontAwesome5.UWP.Example.ViewModels
 
         public List<EFontAwesomeIcon> VisibleIcons { get; private set; }
 
+        private string _filterText;
         public string FilterText
         {
           get => _filterText;
