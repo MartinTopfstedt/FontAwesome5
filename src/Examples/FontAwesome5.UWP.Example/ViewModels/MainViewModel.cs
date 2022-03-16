@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
+using System.Text.RegularExpressions;
 using FontAwesome5.Extensions;
-using FontAwesome5.UWP;
 
 namespace FontAwesome5.UWP.Example.ViewModels
 {
@@ -16,7 +15,7 @@ namespace FontAwesome5.UWP.Example.ViewModels
                         .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetLabel()).ToList();
 
             AllIcons.Remove(EFontAwesomeIcon.None);
-            SelectedIcon = AllIcons.First();
+            UpdateVisibleIcons();
 
             FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
             SpinDuration = 5;
@@ -125,7 +124,7 @@ namespace FontAwesome5.UWP.Example.ViewModels
         public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
 
         public string FontText => $"<fa5:FontAwesome Icon=\"{SelectedIcon}\" Fontsize=\"{FontSize}\" Spin=\"{SpinIsEnabled}\" " + 
-                                  $"SpinDuration=\"{SpinDuration}\" Pulse=\"{PulseIsEnabled}\" PulseDuration=\"{PulseDuration}\" FlipOrientation=\"{FlipOrientation}\" Rotation=\"{Rotation}\" >";
+                                  $"SpinDuration=\"{SpinDuration}\" Pulse=\"{PulseIsEnabled}\" PulseDuration=\"{PulseDuration}\" FlipOrientation=\"{FlipOrientation}\" >";
 
         public void RaisePropertyChanged(string propertyName)
         {
@@ -133,5 +132,54 @@ namespace FontAwesome5.UWP.Example.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-    }
+
+        #region Visible Icon Filtering
+
+        public List<EFontAwesomeIcon> VisibleIcons { get; private set; }
+
+        private string _filterText;
+        public string FilterText
+        {
+          get => _filterText;
+          set
+          {
+            _filterText = value;
+            UpdateVisibleIcons();
+          }
+        }
+
+        private void UpdateVisibleIcons()
+        {
+          var addAll = string.IsNullOrWhiteSpace(FilterText);
+
+          //Confirm regex is valid
+          if (!addAll)
+          {
+            try
+            {
+              _ = Regex.IsMatch(string.Empty, FilterText);
+            }
+            catch (Exception)
+            {
+              addAll = true;
+            }
+          }
+
+          //Add all if no proper filter is applied
+          VisibleIcons = addAll
+            ? AllIcons
+            : new List<EFontAwesomeIcon>(AllIcons.Where(icon => Regex.IsMatch(
+              icon.GetInformation().Label
+              , FilterText
+              , RegexOptions.IgnoreCase
+            )));
+
+          SelectedIcon = VisibleIcons.FirstOrDefault();
+
+          RaisePropertyChanged(nameof(VisibleIcons));
+          RaisePropertyChanged(nameof(SelectedIcon));
+        }
+
+        #endregion
+  }
 }

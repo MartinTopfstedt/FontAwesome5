@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FontAwesome5.NetCore30.Example"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
-        xmlns:fontawesome5="clr-namespace:FontAwesome5;assembly=FontAwesome5"
+        xmlns:viewModels="clr-namespace:FontAwesome5.NetCore30.Example.ViewModels"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
         Title="FontAwesome5.NetCore.Example" Height="632" Width="883">
   <Window.Resources>
     <fa5:LabelConverter x:Key="LabelConverter"/>
@@ -63,21 +63,34 @@
       </StackPanel>
     </StackPanel>
 
-    <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
-      <ListView.View>
-        <GridView>
-          <GridViewColumn Header="Icon">
-            <GridViewColumn.CellTemplate>
-              <DataTemplate>
-                <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
-              </DataTemplate>
-            </GridViewColumn.CellTemplate>
-          </GridViewColumn>
-          <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
-          <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
-        </GridView>
-      </ListView.View>
-    </ListView>
+    <Grid Grid.Column="0" Grid.Row="1">
+      <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="Filter:  " Grid.Column="0" Grid.Row="0" Margin="5,0,0,5" />
+      <TextBox Grid.Column="1" Grid.Row="0" ToolTipService.ToolTip ="String or Regex.."  Margin="0, 0, 0, 5"
+               Text="{Binding FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+      <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding VisibleIcons}" SelectedItem="{Binding SelectedIcon}">
+          <ListView.View>
+              <GridView>
+                  <GridViewColumn Header="Icon">
+                      <GridViewColumn.CellTemplate>
+                          <DataTemplate>
+                              <fa5:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                          </DataTemplate>
+                      </GridViewColumn.CellTemplate>
+                  </GridViewColumn>
+                  <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
+                  <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
+              </GridView>
+          </ListView.View>
+      </ListView>
+    </Grid>
 
     <StackPanel Grid.Column="1" Grid.Row="1">
       <fa5:SvgAwesome Icon="{Binding SelectedIcon}" Height="100" Width="100" Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" Visibility="{Binding Visibility}" Margin="10"/>
