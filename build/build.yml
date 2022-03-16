@@ -34,8 +34,6 @@ steps:
     Action: '##vso[build.updatebuildnumber]'
     BuildVersion: $(GitVersion.NuGetVersionV2)
 
-
-
 - task: NuGetToolInstaller@1
   inputs:
     versionSpec: 
