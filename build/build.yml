@@ -13,6 +13,15 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: UseDotNet@2
+  displayName: 'Install .NET Core'
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'
+    includePreviewVersions: true
+    performMultiLevelLookup: true
+
 - task: GitVersion@5
   inputs:
     runtime: 'core'
@@ -25,13 +34,7 @@ steps:
     Action: '##vso[build.updatebuildnumber]'
     BuildVersion: $(GitVersion.NuGetVersionV2)
 
-- task: UseDotNet@2
-  displayName: 'Install .NET Core'
-  inputs:
-    packageType: 'sdk'
-    version: '6.x'
-    includePreviewVersions: true
-    performMultiLevelLookup: true
+
 
 - task: NuGetToolInstaller@1
   inputs:
