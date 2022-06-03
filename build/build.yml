@@ -8,7 +8,7 @@ pool:
 
 variables:
   solution: 'src/FontAwesome5.sln'
-  nuspec: 'src/NuGet/FontAwesome5.nuspec'
+  nuspec: 'src/NuGet/*.nuspec'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
