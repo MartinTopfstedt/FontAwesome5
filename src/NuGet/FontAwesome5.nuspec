@@ -75,12 +75,12 @@
 		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.pdb" target="lib\net5.0-windows7.0\" />
 
 		<!-- .Net 6.0 -->
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.dll" target="lib\net6.0-windows7.0\" />
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.xml" target="lib\net6.0-windows7.0\" />
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.pdb" target="lib\net6.0-windows7.0\" />
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.dll" target="lib\net6.0-windows7.0\" />
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.xml" target="lib\net6.0-windows7.0\" />
-		<file src="..\FontAwesome5.Net\bin\Release\net5.0-windows\FontAwesome5.Net.pdb" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.dll" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.xml" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.pdb" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.Net.dll" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.Net.xml" target="lib\net6.0-windows7.0\" />
+		<file src="..\FontAwesome5.Net\bin\Release\net6.0-windows\FontAwesome5.Net.pdb" target="lib\net6.0-windows7.0\" />
 
 		<!-- UWP -->
 		<file src="..\FontAwesome5.UWP\bin\Release\FontAwesome5.dll" target="lib\uap10.0" />
