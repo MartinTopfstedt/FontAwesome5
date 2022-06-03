@@ -15,7 +15,9 @@ Font Awesome: https://github.com/FortAwesome/Font-Awesome
 
 #### Installation
 
-1. Install the FontAwesome5 NuGet Package:  ```Install-Package FontAwesome5```
+Install the FontAwesome5 NuGet Package:  ```Install-Package FontAwesome5```
+or
+Install the FontAwesome5.WinUI NuGet Package:  ```Install-Package FontAwesome5.WinUI```
 
 
 #### Usage XAML

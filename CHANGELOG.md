@@ -1,3 +1,5 @@
+# 2.1.11
+- separated WinUI in new package
 # 2.1.5
 - added WinUi support (thanks to David Hovey)
 - Updated FontAwesome v5.15.4
