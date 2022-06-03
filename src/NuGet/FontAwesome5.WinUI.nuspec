@@ -15,6 +15,13 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<tags>fontawesome fontawesome5</tags>
 		<copyright>Copyright © 2021 Codinion</copyright>
+		<dependencies>
+			<group targetFramework=".NETStandard1.4" />
+			<group targetFramework=".NETStandard2.1" />
+			<group targetFramework="net5.0" />
+			<group targetFramework="net6.0" />
+			<group targetFramework="net6.0-windows10.0.19041.0" />
+		</dependencies>
 	</metadata>
 	<files>
 		<file src="..\icon.png" target="" />
@@ -33,6 +40,11 @@
 		<file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.dll" target="lib\net5.0\" />
 		<file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.xml" target="lib\net5.0\" />
 		<file src="..\FontAwesome5\bin\Release\net5.0\FontAwesome5.pdb" target="lib\net5.0\" />
+
+		<!-- .Net 6.0 -->
+		<file src="..\FontAwesome5\bin\Release\net6.0\FontAwesome5.dll" target="lib\net6.0\" />
+		<file src="..\FontAwesome5\bin\Release\net6.0\FontAwesome5.xml" target="lib\net6.0\" />
+		<file src="..\FontAwesome5\bin\Release\net6.0\FontAwesome5.pdb" target="lib\net6.0\" />
 
 		<!-- WinUI -->
 		<file src="..\FontAwesome5.WinUI\bin\Release\net6.0-windows10.0.19041.0\FontAwesome5.dll" target="lib\net6.0-windows10.0.19041.0" />
